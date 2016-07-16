@@ -1,9 +1,6 @@
   <!DOCTYPE html>
   <html>
     <head>
-      <script src="Day4/angular.js"></script><!--you might need CDN here-->
-      <script src="Day4/angular-route.js"></script>
-      <script src="Day4/facebook.js"></script>
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
       <title>Wandile's Personal Website</title>
     </head>
@@ -89,6 +86,9 @@
     });
   }
 </script>
-        <div class="container-fluid" ng-view></div>
+        <p>This is the home page</p>
+        <fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button>
+        <div id="status"></div>
+        <div class="fb-like" data-share="true" data-width="450" data-show-faces="true"></div>
     </body>
   </html>
