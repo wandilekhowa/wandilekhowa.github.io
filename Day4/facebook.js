@@ -38,7 +38,7 @@ app.controller("MainCtrl", function($scope, $firebaseArray)
 
 });
 
-app.controller("ProfileCtrl", function($scope, $firebaseArray, $routeParams) 
+app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArray) 
 {
   $scope.userName = $routeParams.user_name;
   $scope.userId = $routeParams.user_id;
