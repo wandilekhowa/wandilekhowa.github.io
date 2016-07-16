@@ -114,7 +114,7 @@ Uniformity=50
 [White Balance]
 Setting=Camera
 Temperature=6490
-Green=1.002
+Green=1.0019899871615519
 Equal=1
 
 [Color appearance]
@@ -316,5 +316,3 @@ PreTwoGreen=true
 
 [IPTC]
 Copyright=University of Cape Town;
-Keywords=
-SupplementalCategories=
