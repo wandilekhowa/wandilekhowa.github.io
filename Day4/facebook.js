@@ -43,12 +43,15 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
   $scope.userName = $routeParams.user_name;
   $scope.userId = $routeParams.user_id;
   $http({
-    url: "https://graph.facebook.com/search?",
+    url: "https://graph.facebook.com/me?",
     method: "GET",
     params: {
         /* text:"good news everyday", */
       access_token:"269074203460979|0A8ZaIb9i_getYTt6aw_5I6LnbA",
-      q: "$scope.userName"
+    }
+    fields: {
+      id: $scope.userName,
+      name: $scope.userId
     }
   }).then(function(response) 
   {
