@@ -11,7 +11,7 @@ app.config(function($routeProvider) {
   })
 });
 
-app.controller("MainCtrl", function($scope, $firebaseArray) 
+app.controller("MainCtrl", function($scope) 
 {
 // This is called with the results from from FB.getLoginStatus().
   function statusChangeCallback(response) {
@@ -95,19 +95,8 @@ app.controller("MainCtrl", function($scope, $firebaseArray)
 
 });
 
-app.controller("HomeCtrl", function($scope, $firebaseArray) 
+app.controller("HomeCtrl", function($scope) 
 {
-    var ref = firebase.database().ref().child("channels");
-    $scope.channels = $firebaseArray(ref);
-    $scope.addChannel = function()
-    {
-      $scope.channels.$add({
-        name: $scope.channelName,
-        description: $scope.description,
-        created_time: dateConverter(Date.now())
-      });
-      $scope.channelName = "";
-      $scope.description= "";
-    };
+
 });
 
