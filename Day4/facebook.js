@@ -8,7 +8,7 @@ app.config(function($routeProvider)
   templateUrl: 'Day4/home.html',
   })
 
-  $routeProvider.when('/user_name/user_id', {
+  $routeProvider.when('/username/userID/:user_name/:user_id', {
   controller: 'ProfileCtrl',
   templateUrl: 'Day4/profile.html',
   })
@@ -35,20 +35,7 @@ var dateConverter = function timeConverter(UNIX_timestamp)
 
 app.controller("MainCtrl", function($scope, $firebaseArray) 
 {
-  $scope.userName = user_name;
-  $scope.userId = user_id;
-  $http({
-    url: "http://graph.facebook.com/search?",
-    method: "GET",
-    params: {
-        /* text:"good news everyday", */
-      access_token:"269074203460979|0A8ZaIb9i_getYTt6aw_5I6LnbA",
-      q: "$scope.userName"
-    }
-  }).then(function(response) 
-  {
-    console.log(response);
-  })
+  
 });
 
 app.controller("ProfileCtrl", function($scope, $firebaseArray) 
