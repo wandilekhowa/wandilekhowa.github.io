@@ -1,4 +1,4 @@
-var app = angular.module("Facebook", ["firebase", "ngRoute" ]);
+var app = angular.module("Facebook", ["ngRoute" ]);
 
 app.config(function($routeProvider) 
 {
