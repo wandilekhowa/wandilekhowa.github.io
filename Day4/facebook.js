@@ -3,7 +3,7 @@ var app = angular.module("Facebook", ["ngRoute" ]);
 app.config(function($routeProvider) {
   $routeProvider.when('/', {
     controller: 'MainCtrl',
-    templateUrl: 'index.html',
+    templateUrl: 'Day4/home.html',
   })
   $routeProvider.when('/home', {
     controller: 'HomeCtrl',
