@@ -55,6 +55,7 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
     }
   }).then(function(response) 
   {
+    $scope.image = response.data;
     console.log(response.data);
   })
 });
