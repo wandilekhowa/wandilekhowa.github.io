@@ -81,5 +81,6 @@
       // document.getElementById('status').innerHTML =
       //   'Thanks for logging in, ' + response.name + '!';
     });
-  console.log("Welcome "+user_name+" id: "+user_id);
   }
+
+  console.log("Welcome "+user_name+" id: "+user_id);
