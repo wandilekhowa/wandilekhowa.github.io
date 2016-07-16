@@ -1,3 +1,18 @@
+var app = angular.module("Facebook", ["ngRoute" ]);
+
+app.config(function($routeProvider) {
+  $routeProvider.when('/', {
+    controller: 'MainCtrl',
+    templateUrl: 'index.html',
+  })
+  $routeProvider.when('/home', {
+    controller: 'MainCtrl',
+    templateUrl: 'Day4/home.html',
+  })
+});
+
+app.controller("MainCtrl", function($scope, $firebaseArray) 
+{
 // This is called with the results from from FB.getLoginStatus().
   function statusChangeCallback(response) {
     console.log('statusChangeCallback');
@@ -77,3 +92,6 @@
       //   'Thanks for logging in, ' + response.name + '!';
     });
   }
+
+});
+
