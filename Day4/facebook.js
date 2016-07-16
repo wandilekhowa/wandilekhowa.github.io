@@ -4,7 +4,7 @@ app.config(function($routeProvider)
 {
   $routeProvider.when('/', {
     controller: 'MainCtrl',
-    templateUrl: 'Day/home.html',
+    templateUrl: 'Day4/home.html',
   })
 });
 
