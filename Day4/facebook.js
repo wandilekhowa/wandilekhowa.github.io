@@ -34,15 +34,6 @@ app.controller('MainCtrl', function($scope, $http,$routeParams)
     }
   }
 
-  // This function is called when someone finishes with the Login
-  // Button.  See the onlogin handler attached to it in the sample
-  // code below.
-  function checkLoginState() {
-    FB.getLoginStatus(function(response) {
-      statusChangeCallback(response);
-    });
-  }
-
   window.fbAsyncInit = function() {
     FB.init({
       appId      : '269074203460979',
@@ -67,6 +58,15 @@ app.controller('MainCtrl', function($scope, $http,$routeParams)
     FB.getLoginStatus(function(response) {
       statusChangeCallback(response);
     });
+
+    // This function is called when someone finishes with the Login
+  // Button.  See the onlogin handler attached to it in the sample
+  // code below.
+  function checkLoginState() {
+    FB.getLoginStatus(function(response) {
+      statusChangeCallback(response);
+    });
+  }
 
     };
 
