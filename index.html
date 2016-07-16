@@ -36,14 +36,7 @@
         <a id="proj-menu" href="Day4/projects.html"><div class="projects proj-img"><div class="hover-overlay real-proj"><h3>Projects</h3></div></div></a>
 
         <div class="projects fake"><div class="hover-overlay"></div></div>
-        <fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button>
-        <div id="status"></div>
-        <div
-          class="fb-like"
-          data-share="true"
-          data-width="450"
-          data-show-faces="true">
-        </div>
+        <div class="container-fluid" ng-view></div>
     </div>
     </div>
     <script src="Day4/angular.js"></script><!--you might need CDN here-->
