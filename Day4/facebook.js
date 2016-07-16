@@ -35,13 +35,13 @@ var dateConverter = function timeConverter(UNIX_timestamp)
 
 app.controller("MainCtrl", function($scope, $firebaseArray) 
 {
-  
+
 });
 
-app.controller("ProfileCtrl", function($scope, $firebaseArray) 
+app.controller("ProfileCtrl", function($scope, $firebaseArray, $routeParams) 
 {
-  $scope.userName = user_name;
-  $scope.userId = user_id;
+  $scope.userName = $routeParams.user_name;
+  $scope.userId = $routeParams.user_id;
   $http({
     url: "http://graph.facebook.com/search?",
     method: "GET",
