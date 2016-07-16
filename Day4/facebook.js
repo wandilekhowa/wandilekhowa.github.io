@@ -50,8 +50,8 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
       access_token:"269074203460979|0A8ZaIb9i_getYTt6aw_5I6LnbA",
     },
     fields: {
-      id: $routeParams.user_name,
-      name: $routeParams.user_id
+      id: $routeParams.user_id,
+      name: $routeParams.user_name
     }
   }).then(function(response) 
   {
