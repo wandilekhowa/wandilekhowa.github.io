@@ -6,7 +6,7 @@ app.config(function($routeProvider) {
     templateUrl: 'index.html',
   })
   $routeProvider.when('/home', {
-    controller: 'MainCtrl',
+    controller: 'HomeCtrl',
     templateUrl: 'Day4/home.html',
   })
 });
@@ -93,5 +93,21 @@ app.controller("MainCtrl", function($scope, $firebaseArray)
     });
   }
 
+});
+
+app.controller("HomeCtrl", function($scope, $firebaseArray) 
+{
+    var ref = firebase.database().ref().child("channels");
+    $scope.channels = $firebaseArray(ref);
+    $scope.addChannel = function()
+    {
+      $scope.channels.$add({
+        name: $scope.channelName,
+        description: $scope.description,
+        created_time: dateConverter(Date.now())
+      });
+      $scope.channelName = "";
+      $scope.description= "";
+    };
 });
 
