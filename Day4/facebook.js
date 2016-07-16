@@ -44,7 +44,7 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
   $scope.userId = $routeParams.user_id;
   console.log($routeParams.user_name+" "+$routeParams.user_id);
   $http({
-    url: "https://graph.facebook.com/me/notifications?",
+    url: "https://graph.facebook.com/me/picture?",
     method: "GET",
     params: {
       access_token:"EAACEdEose0cBALwBqHYbAAn8Efz1HHeBCuvWttZCTZCZBGQJl1FBD0W40q4SN1jvkofDaKZCQqHnlZAKzNagxdLdZCTIZCcv5VQt74bSBdlI7t1ArlrOfcXDoNU8MX2TXtbA4GxoV40n0tYTH2uYFsH4r3tpDZBi14yD9zO2PXAl7wZDZD",
