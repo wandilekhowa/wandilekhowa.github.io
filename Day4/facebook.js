@@ -1,6 +1,3 @@
-  var user_name = "";
-  var user_id = "";
-
 // This is called with the results from from FB.getLoginStatus().
   function statusChangeCallback(response) {
     console.log('statusChangeCallback');
@@ -75,9 +72,10 @@
     console.log('Welcome!  Fetching your information.... ');
     FB.api('/me', function(response) {
       console.log(response);
-      user_name = response.name;
-      user_id = response.id;
-      console.log("Welcome "+user_name+" id: "+user_id);
+      // user_name = response.name;
+      // user_id = response.id;
+      // console.log("Welcome "+user_name+" id: "+user_id);
+      window.location.href = "/#/response.name/response.id";
       // console.log('Successful login for: ' + response.name);
       // document.getElementById('status').innerHTML =
       //   'Thanks for logging in, ' + response.name + '!';

@@ -1,1 +1,28 @@
-<p>home page</p>
+<!DOCTYPE html>
+<html>
+  <head>
+  <script src="https://www.gstatic.com/firebasejs/3.2.0/firebase.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="template/styles.css">
+  </head>
+  <body ng-app="CitiMood" class="color">
+    <div class="container whole">
+		<div class="container-fluid" ng-view><p>This is home.html page</p></div>
+		<script src="Day4/angular.js"></script><!--you might need CDN here-->
+		<script src="https://www.gstatic.com/firebasejs/3.0.3/firebase.js"></script>
+		<script src="https://cdn.firebase.com/libs/angularfire/2.0.1/angularfire.min.js"></script>
+		<script src="Day4/angular-route.js"></script><!--you might need CDN here-->
+		<script src="Day4/stats.js"></script>
+		<script>
+  		// Initialize Firebase
+  		var config = {
+    	apiKey: "AIzaSyB-zeqrwfoHoZ-8VMh1P4Bxdzj3hDdUVUY",
+    	authDomain: "tensionmock.firebaseapp.com",
+    	databaseURL: "https://tensionmock.firebaseio.com",
+    	storageBucket: "",
+  		};
+  		firebase.initializeApp(config);
+	</script>
+	</div>
+  </body>
+</html>

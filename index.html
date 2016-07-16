@@ -5,13 +5,13 @@
       <link rel="stylesheet" href="Day4/index.css">
       <title>Wandile's Personal Website</title>
     </head>
-    <body ng-app="Facebook">
+    <body ng-app="CitiMood">
     <div class="container-fluid">
       <script src="Day4/facebook.js"></script>
         <div class="row">
           <div class="col-md-6 col-md-offset-5">
             <div class="login-screen">
-              <p>This is the home page</p>
+              <p>This is index.html page</p>
               <fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button>
               <div id="status"></div>
               <div class="fb-like" data-share="true" data-width="450" data-show-faces="true"></div>
@@ -19,5 +19,20 @@
           </div>
         </div>
       </div>
+      <script src="Day4/angular.js"></script><!--you might need CDN here-->
+      <script src="https://www.gstatic.com/firebasejs/3.0.3/firebase.js"></script>
+      <script src="https://cdn.firebase.com/libs/angularfire/2.0.1/angularfire.min.js"></script>
+      <script src="Day4/angular-route.js"></script><!--you might need CDN here-->
+      <script src="Day4/stats.js"></script>
+      <script>
+      // Initialize Firebase
+      var config = {
+      apiKey: "AIzaSyB-zeqrwfoHoZ-8VMh1P4Bxdzj3hDdUVUY",
+      authDomain: "tensionmock.firebaseapp.com",
+      databaseURL: "https://tensionmock.firebaseio.com",
+      storageBucket: "",
+      };
+      firebase.initializeApp(config);
+  </script>
     </body>
   </html>
