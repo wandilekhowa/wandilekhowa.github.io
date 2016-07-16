@@ -1,18 +1,3 @@
-var app = angular.module("Facebook", ["ngRoute" ]);
-
-app.config(function($routeProvider) {
-  $routeProvider.when('/', {
-    controller: 'MainCtrl',
-    templateUrl: 'Day4/home.html',
-  })
-  $routeProvider.when('/home', {
-    controller: 'HomeCtrl',
-    templateUrl: 'Day4/home.html',
-  })
-});
-
-app.controller("MainCtrl", function($scope) 
-{
 // This is called with the results from from FB.getLoginStatus().
   function statusChangeCallback(response) {
     console.log('statusChangeCallback');
@@ -93,10 +78,4 @@ app.controller("MainCtrl", function($scope)
     });
   }
 
-});
-
-app.controller("HomeCtrl", function($scope) 
-{
-
-});
-
+  
