@@ -48,7 +48,7 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
     params: {
         /* text:"good news everyday", */
       access_token:"269074203460979|0A8ZaIb9i_getYTt6aw_5I6LnbA",
-    }
+    },
     fields: {
       id: $scope.userName,
       name: $scope.userId
