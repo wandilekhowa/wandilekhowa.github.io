@@ -8,7 +8,7 @@ app.config(function($routeProvider)
   })
 });
 
-app.controller("MainCtrl", function($scope, $firebaseArray, $routeParams) 
+app.controller("MainCtrl", function($scope, $routeParams) 
 {
 // This is called with the results from from FB.getLoginStatus().
   function statusChangeCallback(response) {
