@@ -11,7 +11,8 @@ app.config(function($routeProvider)
 app.controller("MainCtrl", function($scope, $routeParams) 
 {
 // This is called with the results from from FB.getLoginStatus().
-  function statusChangeCallback(response) {
+  function statusChangeCallback(response) 
+  {
     console.log('statusChangeCallback');
     console.log(response);
     // The response object is returned with a status field that lets the
@@ -31,7 +32,7 @@ app.controller("MainCtrl", function($scope, $routeParams)
       document.getElementById('status').innerHTML = 'Please log ' +
         'into Facebook.';
     }
-  }
+  };
 
   // This function is called when someone finishes with the Login
   // Button.  See the onlogin handler attached to it in the sample
@@ -95,5 +96,5 @@ app.controller("MainCtrl", function($scope, $routeParams)
       // document.getElementById('status').innerHTML =
       //   'Thanks for logging in, ' + response.name + '!';
     });
-  }
+  };
 });
