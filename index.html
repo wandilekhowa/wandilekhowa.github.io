@@ -2,13 +2,20 @@
   <html>
     <head>
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+      <link rel="stylesheet" href="Day4/index.css">
       <title>Wandile's Personal Website</title>
     </head>
     <body ng-app="Facebook">
-    <script src="Day4/facebook.js"></script>
-        <p>This is the home page</p>
-        <fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button>
-        <div id="status"></div>
-        <div class="fb-like" data-share="true" data-width="450" data-show-faces="true"></div>
+    <div class="container-fluid">
+      <script src="Day4/facebook.js"></script>
+        <div class="row">
+          <div class="col-md-6 col-md-offset-1">
+            <p>This is the home page</p>
+            <fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button>
+            <div id="status"></div>
+            <div class="fb-like" data-share="true" data-width="450" data-show-faces="true"></div>
+          </div>
+        </div>
+      </div>
     </body>
   </html>
