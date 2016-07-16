@@ -222,7 +222,7 @@ body {
     -moz-background-size: 100%;
     -o-background-size: 100%;
     background-size: 100%;
-
+    -webkit-background-origin:border;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
