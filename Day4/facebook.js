@@ -55,6 +55,6 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
     }
   }).then(function(response) 
   {
-    console.log(response);
+    console.log(response.data);
   })
 });
