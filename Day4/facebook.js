@@ -49,7 +49,7 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
     method: "GET",
   }).then(function(response) 
   {
-    console.log(response);
+    //console.log(response);
     // $scope.userInfo = response.data;
     // var myToken = $scope.userInfo.split("=");
     // console.log(myToken);
