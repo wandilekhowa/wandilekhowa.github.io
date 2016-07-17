@@ -8,7 +8,7 @@ app.config(function($routeProvider)
   templateUrl: 'Day4/home.html',
   })
 
-  $routeProvider.when('/username/userID/:user_name/:user_id', {
+  $routeProvider.when('/username/userID/:user_name/:user_id/:token', {
   controller: 'ProfileCtrl',
   templateUrl: 'Day4/profile.html',
   })
@@ -42,12 +42,12 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
 {
   $scope.userName = $routeParams.user_name;
   $scope.userId = $routeParams.user_id;
-  console.log($routeParams.user_name+" "+$routeParams.user_id);
+  console.log($routeParams.user_name+" "+$routeParams.user_id+" "+$routeParams.tokens);
   $http({
     url: "https://graph.facebook.com/me?",
     method: "GET",
     params: {
-      access_token:"EAACEdEose0cBAJzIEx3fwGTOUHxYa6lPpqnYxDnaWAjW3SEJRIuyMda6rsWyaB18kVgbidyZAd3vobowLPZB64y7ZCJpeA0OxECefrVM6uRJ02PLjvWIDEUuZAZCVT1TgwCQpJOiVeyVEySf5ytQDx4RBZBDKZAMo8BrHogP62ljQZDZD",
+      access_token:$routeParams.token,
     },
     fields: {
       id: $routeParams.user_id,
@@ -57,6 +57,5 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
   {
     console.log(response);
     $scope.userInfo = response.data;
-    //console.log(response);
   })
 });
