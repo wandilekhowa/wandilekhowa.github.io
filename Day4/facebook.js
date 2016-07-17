@@ -43,7 +43,8 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
   $scope.userName = $routeParams.user_name;
   $scope.userId = $routeParams.user_id;
   console.log($routeParams.user_name+" "+$routeParams.user_id);
-  FB.api('/me?fields=id,about,bio,name,email,quotes', function(response) {
+  FB.api('/me?fields=id,about,bio,name,email,quotes', function(response) 
+  {
       console.log(response);
       $scope.quote = response.quotes;
       //window.location.href = "/#/username/userID/"+response.name+"/"+response.id;
