@@ -50,13 +50,14 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
       access_token:"EAACEdEose0cBAJzIEx3fwGTOUHxYa6lPpqnYxDnaWAjW3SEJRIuyMda6rsWyaB18kVgbidyZAd3vobowLPZB64y7ZCJpeA0OxECefrVM6uRJ02PLjvWIDEUuZAZCVT1TgwCQpJOiVeyVEySf5ytQDx4RBZBDKZAMo8BrHogP62ljQZDZD",
     },
     fields: {
+      console.log($routeParams.user_id, $routeParams.user_name);
       id: $routeParams.user_id,
       name: $routeParams.user_name
     }
   }).then(function(response) 
   {
     console.log(response);
-    $scope.userInfo = response.data;
-    //console.log(response);
+    //$scope.userInfo = response.data;
+    console.log(response);
   })
 });
