@@ -52,5 +52,21 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
     $scope.userInfo = response.data;
     var myToken = $scope.userInfo.split("=");
     console.log(myToken);
+    $scope.token = myToken[1];
+    $http({
+    url: "https://graph.facebook.com/me?",
+    method: "GET",
+    params:{
+      access_token: $scope.token,
+    },
+    fields:{
+      id: $scope.userId,
+      name: $scope.userName
+    }
+  }).then(function(response) 
+  {
+    console.log(response);
+    
+  })
   })
 });
