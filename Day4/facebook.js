@@ -47,7 +47,7 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
     url: "https://graph.facebook.com/me?",
     method: "GET",
     params: {
-      access_token:"269074203460979|bcfd7d1a64a493ac79f1a4d47055702b",
+      access_token:"EAABtQNm4CGoBALy2fZCZCWiAy5PpxgrdciHq3ilv6NLH7IcZCtLk7FJfVUzzVRrCZBu9dAEHZBVVjjgK24CeHIUkdDEgmjwGEIx2yby0hYgTtVBHVfZCUaIZAKE9XER4jaJpc5dhZCFC3fb5a2uc9MXehmO68f3Tzgr2YHVDk5N7vQZDZD",
     },
     fields: {
       id: $routeParams.user_id,
