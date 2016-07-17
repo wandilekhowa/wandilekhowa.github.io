@@ -44,29 +44,30 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
   $scope.userId = $routeParams.user_id;
   console.log($routeParams.user_name+" "+$routeParams.user_id+" "+$routeParams.token);
   $http({
-    url: "https://graph.facebook.com/oauth/access_token?client_id=269074203460979&client_secret=bcfd7d1a64a493ac79f1a4d47055702b&grant_type=client_credentials" +"&redirect_uri=https://wandilekhowa.github.io/#/&scope=user_about_me",
+    url: "https://www.facebook.com/dialog/oauth?client_id=269074203460979s&display=popup&response_type=token&redirect_uri=https://wandilekhowa.github.io/#/",
+    // url: "https://graph.facebook.com/oauth/access_token?client_id=269074203460979&client_secret=bcfd7d1a64a493ac79f1a4d47055702b&grant_type=client_credentials" +"&redirect_uri=https://wandilekhowa.github.io/#/&scope=user_about_me",
     method: "GET",
   }).then(function(response) 
   {
     console.log(response);
-    $scope.userInfo = response.data;
-    var myToken = $scope.userInfo.split("=");
-    console.log(myToken);
-    $scope.token = myToken[1];
-    $http({
-    url: "https://graph.facebook.com/me?",
-    method: "GET",
-    params:{
-      access_token: $scope.token,
-    },
-    fields:{
-      id: $scope.userId,
-      name: $scope.userName
-    }
-  }).then(function(response) 
-  {
-    console.log(response);
+    // $scope.userInfo = response.data;
+    // var myToken = $scope.userInfo.split("=");
+    // console.log(myToken);
+    // $scope.token = myToken[1];
+  //   $http({
+  //   url: "https://graph.facebook.com/me?",
+  //   method: "GET",
+  //   params:{
+  //     access_token: $scope.token,
+  //   },
+  //   fields:{
+  //     id: $scope.userId,
+  //     name: $scope.userName
+  //   }
+  // }).then(function(response) 
+  // {
+  //   console.log(response);
     
-  })
+  // })
   })
 });
