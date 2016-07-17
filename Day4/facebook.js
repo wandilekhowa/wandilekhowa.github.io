@@ -44,7 +44,7 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
   $scope.userId = $routeParams.user_id;
   console.log($routeParams.user_name+" "+$routeParams.user_id);
   $http({
-    url: "https://graph.facebook.com/me/picture?",
+    url: "https://graph.facebook.com/me?",
     method: "GET",
     params: {
       access_token:"EAACEdEose0cBAO6Y048PURZBNTA1pFyKtZA6IsypagMM5MrhFDeTP9zTcOB3KmX2Xh6NssDtlUqj0c3ZCdb8QqUciXoj1DGfIIlSvZBWd7H9fybidxHfViBtz5b3BfiZCygnIdb1eSm6rqZABis2VCy7X0hw5bZBehV1gDpZB3rEWAZDZD",
@@ -55,7 +55,7 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
     }
   }).then(function(response) 
   {
-    $scope.image = response.data;
-    console.log(response.data);
+    //$scope.image = response.data;
+    console.log(response);
   })
 });
