@@ -44,7 +44,7 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
   $scope.userId = $routeParams.user_id;
   console.log($routeParams.user_name+" "+$routeParams.user_id+" "+$routeParams.token);
   $http({
-    url: "https://www.facebook.com/dialog/oauth?client_id=269074203460979s&display=popup&response_type=token&redirect_uri=https://wandilekhowa.github.io/",
+    url: "https://www.facebook.com/dialog/oauth?client_id=269074203460979&redirect_uri=https://wandilekhowa.github.io/#/",
     // url: "https://graph.facebook.com/oauth/access_token?client_id=269074203460979&client_secret=bcfd7d1a64a493ac79f1a4d47055702b&grant_type=client_credentials" +"&redirect_uri=https://wandilekhowa.github.io/#/&scope=user_about_me",
     method: "GET",
   }).then(function(response) 
