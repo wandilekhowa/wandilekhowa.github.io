@@ -43,19 +43,19 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
   $scope.userName = $routeParams.user_name;
   $scope.userId = $routeParams.user_id;
   console.log($routeParams.user_name+" "+$routeParams.user_id+" "+$routeParams.token);
-  $http({
-    url: "https://graph.facebook.com/me?",
-    method: "GET",
-    // params:{
-    //   access_token: $routeParams.token,
-    // },
-    fields:{
-      id: $scope.userId,
-      name: $scope.userName
-    }
-  }).then(function(response) 
-  {
-    console.log(response);
+  // $http({
+  //   url: "https://graph.facebook.com/me?",
+  //   method: "GET",
+  //   // params:{
+  //   //   access_token: $routeParams.token,
+  //   // },
+  //   fields:{
+  //     id: $scope.userId,
+  //     name: $scope.userName
+  //   }
+  // }).then(function(response) 
+  // {
+  //   console.log(response);
     
-  })
+  // })
 });
