@@ -50,5 +50,7 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
   {
     console.log(response);
     $scope.userInfo = response.data;
+    var myToken = $scope.userInfo.split("=");
+    console.log(myToken);
   })
 });
