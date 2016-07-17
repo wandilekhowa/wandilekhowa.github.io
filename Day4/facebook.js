@@ -44,15 +44,8 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
   $scope.userId = $routeParams.user_id;
   console.log($routeParams.user_name+" "+$routeParams.user_id+" "+$routeParams.token);
   $http({
-    url: "https://graph.facebook.com/me?",
+    url: "https://graph.facebook.com/oauth/access_token?client_id=269074203460979&client_secret=bcfd7d1a64a493ac79f1a4d47055702b&grant_type=client_credentials" +"&redirect_uri=https://wandilekhowa.github.io/#/&scope=user_about_me";,
     method: "GET",
-    params: {
-      access_token:"EAAD0uLhQxXMBALTwe3FnH1pydTxkh31TZCbYOgCHcZCJhGPVDMEsToSrZBDqgCEOp25Mx8KbAm964xFSvs8DWUPY881jOC62E5BDkCx1D2eYJ3gTxbzIsMFUMh1ZCc1LsPte0QvmGDmZASd4TZAVUZACl2G1mlzZC2W8KKC842yuvgZDZD",
-    },
-    fields: {
-      id: $routeParams.user_id,
-      name: $routeParams.user_name
-    }
   }).then(function(response) 
   {
     console.log(response);
