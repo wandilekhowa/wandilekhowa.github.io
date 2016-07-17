@@ -55,6 +55,7 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
     }
   }).then(function(response) 
   {
+    console.log(response);
     $scope.userInfo = response.data;
     //console.log(response);
   })
