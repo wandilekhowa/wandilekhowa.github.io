@@ -277,7 +277,7 @@ body {
 	
 	#home-row-2 .col-12 .home-hover:hover {
 		height: 166px;
-		padding-top: 0;
+		padding-top: 13px;
 	}
 
 @media (max-width: 767px) {
