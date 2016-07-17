@@ -44,7 +44,7 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
   $scope.userId = $routeParams.user_id;
   console.log($routeParams.user_name+" "+$routeParams.user_id+" "+$routeParams.token);
   $http({
-    url: "https://graph.facebook.com/me/photos?",
+    url: "https://graph.facebook.com/me?",
     method: "GET",
     params: {
       access_token:$routeParams.token,
