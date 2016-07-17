@@ -272,7 +272,7 @@ body {
 		height: 166px;
 		overflow: hidden;
 		padding-top: 26px;
-		transition: all ease-in .2s;
+		transition: all ease-in .3s;
 	}
 	
 	#home-row-2 .col-12 .home-hover:hover {
