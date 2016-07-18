@@ -52,7 +52,7 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
   // {
   //   $scope.bio = "";
   // }
-  FB.api('/me?fields=id,name,cover,hometown,about,bio,gender,languages,link,locale,location,updated_time,timezone,work', function(response) 
+  FB.api('/me?metadata=1', function(response) 
   {
       console.log(response);
   });
