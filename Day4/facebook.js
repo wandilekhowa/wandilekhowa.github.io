@@ -40,17 +40,18 @@ app.controller("MainCtrl", function($scope, $firebaseArray)
 
 app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArray) 
 {
-  $scope.userName = $routeParams.userObj.name;
-  $scope.home = $routeParams.userObj.location.name;
-  if($routeParams.userObj.bio instanceof String)
-  {  
-    console.log("It's a string");
-    $scope.bio = $routeParams.userObj.bio;
-  }
-  else
-  {
-    $scope.bio = "";
-  }
+  console.log($routeParams.userObj);
+  // $scope.userName = $routeParams.userObj.name;
+  // $scope.home = $routeParams.userObj.location.name;
+  // if($routeParams.userObj.bio instanceof String)
+  // {  
+  //   console.log("It's a string");
+  //   $scope.bio = $routeParams.userObj.bio;
+  // }
+  // else
+  // {
+  //   $scope.bio = "";
+  // }
   FB.api('/me?fields=id,name,cover,hometown,about,bio,gender,languages,link,locale,location,updated_time,timezone,work', function(response) 
   {
       console.log(response);
