@@ -71,4 +71,9 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
   {
       console.log(response);
   });
+
+  FB.api('/me/events?fields=rsvp_status', function(response) 
+  {
+      console.log(response);
+  });
 });
