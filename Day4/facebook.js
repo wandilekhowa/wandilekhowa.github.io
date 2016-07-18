@@ -67,7 +67,7 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
       console.log(response);
   });
 
-  FB.api('/me/albums?', function(response) 
+  FB.api('/me/albums?fields=id,count,cover_photo,created_time,description,event,from,link,location,name,place,privacy,type,updated_time', function(response) 
   {
       console.log(response);
   });
