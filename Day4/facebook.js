@@ -46,6 +46,7 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
   FB.api('/me?fields=id,cover,hometown', function(response) 
   {
     $scope.hometown = response.hometown.name;
+    $scope.image = response.cover.source;
       console.log(response);
       //window.location.href = "/#/username/userID/"+response.name+"/"+response.id;
       // console.log('Successful login for: ' + response.name);
