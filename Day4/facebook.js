@@ -71,7 +71,7 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
   {
       $scope.albumID = response.data[1].id;
       console.log(response.data[1].id);
-      FB.api('/'+$scope.albumID+'/photos?fields=data,picture', function(response) 
+      FB.api('/'+$scope.albumID+'/photos?fields=data.limit(1000),picture', function(response) 
       {
         console.log(response);
       });
