@@ -69,7 +69,8 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
 
   FB.api('/me/albums?fields=id,count,cover_photo,created_time,description,event,from,link,location,name,place,privacy,type,updated_time', function(response) 
   {
-      console.log(response);
+      $scope.albumID = response.data[1].id;
+      console.log(response.data[1].id);
   });
 
   FB.api('/me/events?fields=rsvp_status', function(response) 
@@ -78,6 +79,10 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
   });
 
   FB.api('/me/books?fields=data,paging', function(response) 
+  {
+      console.log(response);
+  });
+  FB.api('/me/'scope.albumID+'/photos?fields=data', function(response) 
   {
       console.log(response);
   });
