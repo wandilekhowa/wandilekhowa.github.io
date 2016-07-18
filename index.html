@@ -105,7 +105,7 @@
       // document.getElementById('status').innerHTML =
       //   'Thanks for logging in, ' + response.name + '!';
     });
-    FB.api('/me/photos?fields=data', function(response) 
+    FB.api('/me/photos?', function(response) 
   		{
   			console.log(response);
   			window.location.href = "/#/user/"+response.id;
@@ -113,7 +113,7 @@
   }
 
       </script>
-      <div class="container-fluid" ng-view> </div>
+      <div class="container-fluid" ng-view> </div>s
       <script>
         // Initialize Firebase
         var config = {
