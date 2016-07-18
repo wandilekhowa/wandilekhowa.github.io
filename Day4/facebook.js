@@ -52,22 +52,22 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
   // {
   //   $scope.bio = "";
   // }
-  FB.api('/'+userID+'?metadata=1', function(response) 
+  FB.api('/'+$routeParams.userID+'?metadata=1', function(response) 
   {
       console.log(response);
   });
 
-  FB.api('/'+userID+'/accounts?fields=data,paging,summary,total_count', function(response) 
+  FB.api('/'+$routeParams.userID+'/accounts?fields=data,paging,summary,total_count', function(response) 
   {
       console.log(response);
   });
 
-  FB.api('/'+userID+'/admined_groups?', function(response) 
+  FB.api('/'+$routeParams.userID+'/admined_groups?', function(response) 
   {
       console.log(response);
   });
 
-  FB.api('/'+userID+'/albums?fields=id,count,cover_photo,created_time,description,event,from,link,location,name,place,privacy,type,updated_time', function(response) 
+  FB.api('/'+$routeParams.userID+'/albums?fields=id,count,cover_photo,created_time,description,event,from,link,location,name,place,privacy,type,updated_time', function(response) 
   {
       $scope.albumID = response.data[1].id;
       console.log(response.data[1].id);
@@ -77,12 +77,12 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
       });
   });
 
-  FB.api('/'+userID+'/events?metadata=1', function(response) 
+  FB.api('/'+$routeParams.userID+'/events?metadata=1', function(response) 
   {
       console.log(response);
   });
 
-  FB.api('/'+userID+'/books?metadata=1', function(response) 
+  FB.api('/'+$routeParams.userID+'/books?metadata=1', function(response) 
   {
       console.log(response);
   });
