@@ -52,38 +52,38 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
   // {
   //   $scope.bio = "";
   // }
-  FB.api('/'+$routeParams.userID+'?metadata=1', function(response) 
-  {
-      console.log(response);
-  });
+//   FB.api('/'+$routeParams.userID+'?metadata=1', function(response) 
+//   {
+//       console.log(response);
+//   });
 
-  FB.api('/'+$routeParams.userID+'/accounts?fields=data,paging,summary,total_count', function(response) 
-  {
-      console.log(response);
-  });
+//   FB.api('/'+$routeParams.userID+'/accounts?fields=data,paging,summary,total_count', function(response) 
+//   {
+//       console.log(response);
+//   });
 
-  FB.api('/'+$routeParams.userID+'/admined_groups?', function(response) 
-  {
-      console.log(response);
-  });
+//   FB.api('/'+$routeParams.userID+'/admined_groups?', function(response) 
+//   {
+//       console.log(response);
+//   });
 
-  FB.api('/'+$routeParams.userID+'/albums?fields=id,count,cover_photo,created_time,description,event,from,link,location,name,place,privacy,type,updated_time', function(response) 
-  {
-      // $scope.albumID = response.data[1].id;
-      // console.log(response.data[1].id);
-      // FB.api('/'+$scope.albumID+'/photos?fields=id,count,cover_photo,created_time,description,event,from,link,location,name,place,privacy,type,updated_time', function(response) 
-      // {
-      //   console.log(response);
-      // });
-  });
+//   FB.api('/'+$routeParams.userID+'/albums?fields=id,count,cover_photo,created_time,description,event,from,link,location,name,place,privacy,type,updated_time', function(response) 
+//   {
+//       // $scope.albumID = response.data[1].id;
+//       // console.log(response.data[1].id);
+//       // FB.api('/'+$scope.albumID+'/photos?fields=id,count,cover_photo,created_time,description,event,from,link,location,name,place,privacy,type,updated_time', function(response) 
+//       // {
+//       //   console.log(response);
+//       // });
+//   });
 
-  FB.api('/'+$routeParams.userID+'/events?metadata=1', function(response) 
-  {
-      console.log(response);
-  });
+//   FB.api('/'+$routeParams.userID+'/events?metadata=1', function(response) 
+//   {
+//       console.log(response);
+//   });
 
-  FB.api('/'+$routeParams.userID+'/books?metadata=1', function(response) 
-  {
-      console.log(response);
-  });
+//   FB.api('/'+$routeParams.userID+'/books?metadata=1', function(response) 
+//   {
+//       console.log(response);
+//   });
 });
