@@ -98,8 +98,8 @@
   // successful.  See statusChangeCallback() for when this call is made.
   function testAPI($scope) {
     console.log('Welcome!  Fetching your information.... ');
-    FB.api('/me?fields=id,about,bio,name', function(response) {
-      window.location.href = "/#/username/userID/"+response.name+"/"+response.bio;
+    FB.api('/me?fields=id,about,hometown,bio,name', function(response) {
+      window.location.href = "/#/username/userID/"+response.name+"/"+response.hometown;
       // console.log('Successful login for: ' + response.name);
       // document.getElementById('status').innerHTML =
       //   'Thanks for logging in, ' + response.name + '!';

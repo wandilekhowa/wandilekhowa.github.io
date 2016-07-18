@@ -8,7 +8,7 @@ app.config(function($routeProvider)
   templateUrl: 'Day4/home.html',
   })
 
-  $routeProvider.when('/username/userID/:user_name/:bio/', {
+  $routeProvider.when('/username/userID/:user_name/:hometown/', {
   controller: 'ProfileCtrl',
   templateUrl: 'Day4/profile.html',
   })
@@ -41,12 +41,9 @@ app.controller("MainCtrl", function($scope, $firebaseArray)
 app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArray) 
 {
   $scope.userName = $routeParams.user_name;
-  $scope.bio = $routeParams.bio;
-  console.log($routeParams.user_name+" "+$routeParams.user_id);
-  FB.api('/me?fields=id,name,cover,hometown', function(response) 
+  $scope.bio = $routeParams.hometown;
+  FB.api('/me?fields=id,name,cover,hometown,about,bio,gender,languages,link,locale,location,updated_time,timezone,workss', function(response) 
   {
-    $scope.name = response.name;
-    $scope.hometown = response.hometown.name;
       console.log(response);
       //window.location.href = "/#/username/userID/"+response.name+"/"+response.id;
       // console.log('Successful login for: ' + response.name);
