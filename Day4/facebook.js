@@ -42,7 +42,7 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
 {
   $scope.userName = $routeParams.user_name;
   $scope.home = $routeParams.hometown;
-  if($routeParams.bio)
+  if($routeParams.bio instanceof String)
   {  
     $scope.bio = $routeParams.bio;
   }
