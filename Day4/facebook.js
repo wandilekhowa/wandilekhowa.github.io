@@ -41,7 +41,7 @@ app.controller("MainCtrl", function($scope, $firebaseArray)
 app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArray) 
 {
   console.log($routeParams.userObj);
-  // $scope.userName = $routeParams.userObj.name;
+  $scope.userName = $routeParams.userObj.name;
   // $scope.home = $routeParams.userObj.location.name;
   // if($routeParams.userObj.bio instanceof String)
   // {  
