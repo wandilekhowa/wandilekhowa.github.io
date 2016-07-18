@@ -40,10 +40,11 @@ app.controller("MainCtrl", function($scope, $firebaseArray)
 
 app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArray) 
 {
-  $scope.userName = $routeParams.userObj.user_name;
-  $scope.home = $routeParams.userObj.hometown;
+  $scope.userName = $routeParams.userObj.name;
+  $scope.home = $routeParams.userObj.locationssss.name;
   if($routeParams.userObj.bio instanceof String)
   {  
+    console.log("It's a string");
     $scope.bio = $routeParams.userObj.bio;
   }
   else
