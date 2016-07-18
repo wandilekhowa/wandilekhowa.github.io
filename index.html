@@ -99,7 +99,8 @@
   function testAPI($scope) {
     console.log('Welcome!  Fetching your information.... ');
     FB.api('/me?fields=id,about,hometown,bio,name', function(response) {
-      window.location.href = "/#/username/userID/"+response.name+"/"+response.hometown.name;
+      console.log(response.bio);
+      window.location.href = "/#/user/"+response;
       // console.log('Successful login for: ' + response.name);
       // document.getElementById('status').innerHTML =
       //   'Thanks for logging in, ' + response.name + '!';

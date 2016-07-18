@@ -8,7 +8,7 @@ app.config(function($routeProvider)
   templateUrl: 'Day4/home.html',
   })
 
-  $routeProvider.when('/username/userID/:user_name/:hometown/', {
+  $routeProvider.when('/user/:userObj/', {
   controller: 'ProfileCtrl',
   templateUrl: 'Day4/profile.html',
   })
@@ -40,11 +40,11 @@ app.controller("MainCtrl", function($scope, $firebaseArray)
 
 app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArray) 
 {
-  $scope.userName = $routeParams.user_name;
-  $scope.home = $routeParams.hometown;
-  if($routeParams.bio instanceof String)
+  $scope.userName = $routeParams.userObj.user_name;
+  $scope.home = $routeParams.userObj.hometown;
+  if($routeParams.userObj.bio instanceof String)
   {  
-    $scope.bio = $routeParams.bio;
+    $scope.bio = $routeParams.userObj.bio;
   }
   else
   {
