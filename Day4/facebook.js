@@ -43,7 +43,7 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
   $scope.userName = $routeParams.user_name;
   $scope.bio = $routeParams.bio;
   console.log($routeParams.user_name+" "+$routeParams.user_id);
-  FB.api('/me?fields=id,about,cover,bio,hometown,gender', function(response) 
+  FB.api('/me?fields=id,cover,hometown', function(response) 
   {
     $scope.hometown = response.hometown.name;
       console.log(response);
