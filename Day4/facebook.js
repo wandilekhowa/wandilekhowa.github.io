@@ -77,7 +77,7 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
       console.log(response);
   });
 
-  FB.api('/me/books?', function(response) 
+  FB.api('/me/books?fields=data,paging', function(response) 
   {
       console.log(response);
   });
