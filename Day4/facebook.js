@@ -8,7 +8,7 @@ app.config(function($routeProvider)
   templateUrl: 'Day4/home.html',
   })
 
-  $routeProvider.when('/username/userID/:user_name/:user_id/', {
+  $routeProvider.when('/username/userID/:user_name/:bio/', {
   controller: 'ProfileCtrl',
   templateUrl: 'Day4/profile.html',
   })
@@ -41,7 +41,7 @@ app.controller("MainCtrl", function($scope, $firebaseArray)
 app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArray) 
 {
   $scope.userName = $routeParams.user_name;
-  $scope.bio = $routeParams.user_id;
+  $scope.bio = $routeParams.bio;
   console.log($routeParams.user_name+" "+$routeParams.user_id);
   FB.api('/me?fields=id,about,bio,name,email,quotes', function(response) 
   {
