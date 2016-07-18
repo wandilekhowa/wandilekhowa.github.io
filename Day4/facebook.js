@@ -45,6 +45,7 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
   console.log($routeParams.user_name+" "+$routeParams.user_id);
   FB.api('/me?fields=id,about,bio,hometown,gender', function(response) 
   {
+    $scope.hometown = response.hometown.name;
       console.log(response);
       //window.location.href = "/#/username/userID/"+response.name+"/"+response.id;
       // console.log('Successful login for: ' + response.name);
