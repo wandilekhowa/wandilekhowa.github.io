@@ -56,7 +56,7 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
   {
       // $scope.userName = response.name;
       // console.log($scope.userName+"Hey bru");
-      // console.log(response);
+      console.log(response);
       //window.location.href = "/#/username/userID/"+response.name+"/"+response.id;
       // console.log('Successful login for: ' + response.name);
       // document.getElementById('status').innerHTML =
