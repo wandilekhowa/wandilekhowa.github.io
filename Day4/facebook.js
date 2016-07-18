@@ -61,4 +61,9 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
   {
       console.log(response);
   });
+
+  FB.api('/me/admined_groups?', function(response) 
+  {
+      console.log(response);
+  });
 });
