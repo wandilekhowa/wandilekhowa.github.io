@@ -82,7 +82,7 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
   {
       console.log(response);
   });
-  FB.api('/'+scope.albumID+'/photos?fields=data', function(response) 
+  FB.api('/'+$scope.albumID+'/photos?fields=data', function(response) 
   {
       console.log(response);
   });
