@@ -8,7 +8,7 @@ app.config(function($routeProvider)
   templateUrl: 'Day4/home.html',
   })
 
-  $routeProvider.when('/user/:userObj/', {
+  $routeProvider.when('/user/:userID/', {
   controller: 'ProfileCtrl',
   templateUrl: 'Day4/profile.html',
   })
@@ -40,7 +40,7 @@ app.controller("MainCtrl", function($scope, $firebaseArray)
 
 app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArray) 
 {
-  console.log($routeParams.userObj);
+  console.log($routeParams.userID);
   $scope.userName = $routeParams.userObj.name;
   // $scope.home = $routeParams.userObj.location.name;
   // if($routeParams.userObj.bio instanceof String)
@@ -54,27 +54,11 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
   // }
   FB.api('/me?fields=id,name,cover,hometown,about,bio,gender,languages,link,locale,location,updated_time,timezone,work', function(response) 
   {
-      // $scope.userName = response.name;
-      // console.log($scope.userName+"Hey bru");
       console.log(response);
-      //window.location.href = "/#/username/userID/"+response.name+"/"+response.id;
-      // console.log('Successful login for: ' + response.name);
-      // document.getElementById('status').innerHTML =
-      //   'Thanks for logging in, ' + response.name + '!';
-    });
-  // $http({
-  //   url: "https://graph.facebook.com/me?",
-  //   method: "GET",
-  //   // params:{
-  //   //   access_token: $routeParams.token,
-  //   // },
-  //   fields:{
-  //     id: $scope.userId,
-  //     name: $scope.userName
-  //   }
-  // }).then(function(response) 
-  // {
-  //   console.log(response);
-    
-  // })
+  });
+
+  FB.api('/me/accounts?fields=data,paging,summary,total_count', function(response) 
+  {
+      console.log(response);
+  });
 });
