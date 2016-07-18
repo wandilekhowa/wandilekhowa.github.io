@@ -43,11 +43,12 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
   $scope.userName = $routeParams.user_name;
   $scope.userId = $routeParams.user_id;
   console.log($routeParams.user_name+" "+$routeParams.user_id);
-  FB.api('/me?fields=id,about,bio,name,email,quotes', function(response) 
+  FB.api('/me?fields=id,about,bio,name,email,quotess', function(response) 
   {
       console.log(response);
       $scope.bio = response.bio;
       $scope.name = response.name;
+      $scope.email = response.email;
       //window.location.href = "/#/username/userID/"+response.name+"/"+response.id;
       // console.log('Successful login for: ' + response.name);
       // document.getElementById('status').innerHTML =
