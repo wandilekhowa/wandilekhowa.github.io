@@ -76,4 +76,9 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
   {
       console.log(response);
   });
+
+  FB.api('/me/books?', function(response) 
+  {
+      console.log(response);
+  });
 });
