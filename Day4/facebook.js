@@ -40,13 +40,13 @@ app.controller("MainCtrl", function($scope, $firebaseArray)
 
 app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArray) 
 {
-  $scope.userName = $routeParams.user_name;
+  // $scope.userName = $routeParams.user_name;
   $scope.bio = $routeParams.bio;
   console.log($routeParams.user_name+" "+$routeParams.user_id);
-  FB.api('/me?fields=id,cover,hometown', function(response) 
+  FB.api('/me?fields=id,cover,hometsown', function(response) 
   {
+    scope.name = response.name;
     $scope.hometown = response.hometown.name;
-    $scope.image = response.cover.source;
       console.log(response);
       //window.location.href = "/#/username/userID/"+response.name+"/"+response.id;
       // console.log('Successful login for: ' + response.name);
