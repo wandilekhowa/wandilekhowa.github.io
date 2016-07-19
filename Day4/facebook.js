@@ -150,7 +150,19 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
                         $scope.totalComments = $scope.postComments + $scope.commentTotal;
                         console.log("Total likes: "+$scope.totalLikes);
                         console.log("Total comments: "+$scope.totalComments);
-                        console.log($scope.days);
+                        var counts = {}, max = 0, commonDay=0;
+                        for (var i in $scope.days) 
+                        {
+                          counts[days[i]] = (counts[$scope.days[i]] || 0) + 1;
+                          if (counts[days[i]] > max) 
+                          { 
+                            max = counts[$scope.days[i]];
+                            commonDay = $scope.days[i];
+                          }
+                        }
+                        var differntDays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+                        $scope.finalDay = differntDays[commonDay];
+                        console.log($scope.finalDay);
                       }
                     });
                   }
