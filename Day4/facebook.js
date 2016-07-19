@@ -99,13 +99,13 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
       $scope.ref.child($routeParams.userID).child("Events").push(response.data);
   });
 
-  FB.api('/'+$routeParams.userID+'/posts/likes?metadata=1', function(response) 
+  FB.api('/'+$routeParams.userID+'/posts?metadata=1', function(response) 
   {
       console.log("fetching feed");
       console.log(response);
       //$scope.ref.child($routeParams.userID).child("Events").push(response.data);
   });
-  FB.api('/'+$routeParams.userID+'/photos/likes?fields=total_count', function(response) 
+  FB.api('/'+$routeParams.userID+'/photos/uploaded?fields=likes', function(response) 
   {
       console.log("fetching pics");
       console.log(response);
