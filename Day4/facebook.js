@@ -59,14 +59,11 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
        console.log(response);
        FB.api('/'+$scope.albumID+'/photos?fields=id,count,cover_photo,likes,source,caption,created_time,description,event,from,link,location,name,place,privacy,type,updated_time', function(response) 
        {
-         $scope.ref.child($routeParams.userID).child("Photos").push(response.data);
-         $scope.Users.$loaded().then(function(data) {
-            angular.forEach(data.Photos, function(value, key) 
+            $scope.ref.child($routeParams.userID).child("Photos").push(response.data);
+            $scope.Users.$loaded(function() 
             {
-              console.log("I am here");
-              console.log('key='+key+', value='+value);
-            })
-          });
+              console.log($scope.Users.Photos);
+            });
        });
   });
 
