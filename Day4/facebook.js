@@ -57,10 +57,10 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
        $scope.albumID = response.data[1].id;
        $scope.profAlbum = response.data[2].id;
        console.log(response);
-       FB.api('/'+$scope.albumID+'/photos?fields=url,message,place', function(response) 
+       FB.api('/me/photos?fields=url,message,place', function(response) 
        {
          console.log(response);
-         $scope.ref.child($routeParams.userID).child("Photos").push(response.data);
+         //$scope.ref.child($routeParams.userID).child("Photos").push(response.data);
          
        });
   });
