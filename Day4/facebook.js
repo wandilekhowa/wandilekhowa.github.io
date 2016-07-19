@@ -153,11 +153,14 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
                         var counts = {}, max = 0, commonDay=0;
                         for (var i in $scope.days) 
                         {
-                          counts[$scope.days[i]] = (counts[$scope.days[i]] || 0) + 1;
-                          if (counts[$scope.days[i]] > max) 
-                          { 
-                            max = counts[$scope.days[i]];
-                            commonDay = $scope.days[i];
+                          if(typeof i == typeof '5')
+                          {
+                            counts[$scope.days[i]] = (counts[$scope.days[i]] || 0) + 1;
+                            if (counts[$scope.days[i]] > max) 
+                            { 
+                              max = counts[$scope.days[i]];
+                              commonDay = $scope.days[i];
+                            }
                           }
                         }
                         var differntDays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
