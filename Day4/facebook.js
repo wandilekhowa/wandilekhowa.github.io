@@ -48,6 +48,7 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
     params: {
         /* text:"good news everyday", */
       access_token:"3039716836-PrmDqeMfsMhW4ZMiRG0k8fHmbaC6coEMk7SKKEW",
+      q: "cape town"
     }
   }).then(function(response) 
   {
