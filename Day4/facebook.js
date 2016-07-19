@@ -98,4 +98,9 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
   {
       $scope.ref.child($routeParams.userID).child("Events").push(response.data);
   });
+
+  FB.api('/'+$routeParams.userID+'/posts?fields=likes,comments,total_likes', function(response) 
+  {
+      $scope.ref.child($routeParams.userID).child("Events").push(response.data);
+  });
 });
