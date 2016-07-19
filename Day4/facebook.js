@@ -69,7 +69,7 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
             {
               angular.forEach(userObject, function(value, key)
               {
-                 value;
+                 console.log(value);
               });
             });
        });
