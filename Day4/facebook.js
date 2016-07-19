@@ -55,8 +55,8 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
 
   FB.api('/'+$routeParams.userID+'/albums?fields=id,count,cover_photo,created_time,description,event,from,link,location,name,place,privacy,type,updated_time', function(response) 
   {
-      var picLikes = 0;
-      var commentTotal = 0;
+      $scope.picLikes = 0;
+      $scope.commentTotal = 0;
        $scope.albumID = response.data[1].id;
        $scope.profAlbum = response.data[2].id;
        console.log(response);
@@ -85,7 +85,7 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
                         {
                             try
                             {
-                              picLikes += value[i].likes.data.length;
+                              $scope.picLikes += value[i].likes.data.length;
                             }
                             catch(error)
                             {
@@ -93,15 +93,13 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
                             }
                             try
                             {
-                              commentTotal += value[i].comments.data.length;
+                              $scope.commentTotal += value[i].comments.data.length;
                             }
                             catch(error)
                             {
 
                             }
                         }
-                        console.log(picLikes);
-                        console.log(commentTotal);
                       }
                     });
                   }
@@ -117,8 +115,8 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
 
   FB.api('/'+$routeParams.userID+'/posts?fields=likes,comments', function(response) 
   {
-      var postLikes = 0;
-      var postComments = 0;
+      $scope.postLikes = 0;
+      $scope.postComments = 0;
       console.log("fetching feed");
       console.log(response);
       $scope.ref.child($routeParams.userID).child("Posts").push(response.data);
@@ -142,7 +140,7 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
                         {
                             try
                             {
-                              postLikes += value[i].likes.data.length;
+                              $scope.postLikes += value[i].likes.data.length;
                             }
                             catch(error)
                             {
@@ -150,15 +148,17 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
                             }
                             try
                             {
-                              postComments += value[i].comments.data.length;
+                              $scope.postComments += value[i].comments.data.length;
                             }
                             catch(error)
                             {
 
                             }
                         }
-                        console.log(postLikes);
-                        console.log(postComments);
+                        $scope.totalLikes = $scope.picLikes + $scope.postLikes;
+                        $scope.totalComments = $scope.postComments + $scope.commentTotal;
+                        console.log($scope.totalLikes);
+                        console.log($scope.totalComments);
                       }
                     });
                   }
