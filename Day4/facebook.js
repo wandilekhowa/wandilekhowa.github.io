@@ -41,6 +41,7 @@ app.controller("MainCtrl", function($scope, $firebaseArray)
 app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArray) 
 {
   $scope.ref = firebase.database().ref().child("users");
+  $scope.users = $firebaseArray($scope.ref.child($routeParams.userID));
   $scope.pictures = [];
   console.log($routeParams.userID);
   $scope.userName = $routeParams.userName;
@@ -48,7 +49,7 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
   FB.api('/me?fields=id,name,cover,hometown,about,bio,gender,picture,languages,link,locale,location,updated_time,timezone,work', function(response) 
   {
     $scope.users = $firebaseArray($scope.ref.child($routeParams.userID));
-    $scope.ref.child($scope.userId).push(response.data);
+    $scope.ref.child($routeParams.userID).push(response.data);
   });
 
   FB.api('/'+$routeParams.userID+'/albums?fields=id,count,cover_photo,created_time,description,event,from,link,location,name,place,privacy,type,updated_time', function(response) 
@@ -65,6 +66,6 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
 
   FB.api('/'+$routeParams.userID+'/events?fields=id,attending_count,cover,category,description,declined_count,end_time,interested_count,maybe_count,name,place,start_time,timezone,type,updated_time', function(response) 
   {
-      ref.child($scope.userId).push(response.data);
+      $scope.ref.child($routeParams.userID).push(response.data);
   });
 });
