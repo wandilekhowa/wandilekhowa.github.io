@@ -73,7 +73,7 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
                 {
                   if(key==id)
                   {
-                    console.log("MATCH");
+                    console.log(value);
                   }
                 });
             });
