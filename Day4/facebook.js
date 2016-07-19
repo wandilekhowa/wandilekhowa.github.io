@@ -52,10 +52,16 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
   FB.api('/'+$routeParams.userID+'/albums?fields=id,count,cover_photo,created_time,description,event,from,link,location,name,place,privacy,type,updated_time', function(response) 
   {
        $scope.albumID = response.data[1].id;
+       $scope.profAlbum = response.data[2].id;
        console.log(response);
        FB.api('/'+$scope.albumID+'/photos?fields=id,count,cover_photo,created_time,description,event,from,link,location,name,place,privacy,type,updated_time', function(response) 
        {
-         console.log(response);
+         $scope.pictures = response.data;
+       });
+       FB.api('/'+$scope.profAlbum+'/photos?fields=id,count,cover_photo,created_time,description,event,from,link,location,name,place,privacy,type,updated_time', function(response) 
+       {
+         // $scope.profPic = response.data.source;
+          console.log(response.data);
        });
   });
 
