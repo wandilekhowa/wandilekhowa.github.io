@@ -105,10 +105,15 @@
   	});
   	var pictures = [];
     var next = "sasas";
-  	do
-      {
-      	  console.log("getting picture albums");
-          FB.api('/me/photos?fields=id,count,cover_photo,created_time,description,event,from,link,location,name,place,privacy,type,updated_time', function(response) 
+  	FB.api('/'+$routeParams.userID+'/albums?fields=id,count,cover_photo,created_time,description,event,from,link,location,name,place,privacy,type,updated_time', function(response) 
+  		{
+       var next = "sasas";
+       console.log("Fetching pictures");
+       var albumID = response.data[1].id;
+       console.log(response.data[1].id);
+       do
+       {
+          FB.api('/'+albumID+'/photos?fields=id,count,cover_photo,created_time,description,event,from,link,location,name,place,privacy,type,updated_time', function(response) 
           {
             console.log(response);
             pictures.push(response.data);
@@ -119,6 +124,7 @@
        while(next);
        console.log("Done");
        console.log(pictures.length);
+  });
        window.location.href = "/#/user/"+response.id+"/"+response.name+"/"+response.hometown.name;
   	}
 
