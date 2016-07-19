@@ -56,7 +56,6 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
   FB.api('/'+$routeParams.userID+'/albums?fields=id,count,cover_photo,created_time,description,event,from,link,location,name,place,privacy,type,updated_time', function(response) 
   {
       var picLikes = 0;
-      var postLikes = 0;
       var commentTotal = 0;
        $scope.albumID = response.data[1].id;
        $scope.profAlbum = response.data[2].id;
@@ -67,8 +66,6 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
             $scope.ref.child($routeParams.userID).child("Photos").push(response.data);
             var users = firebase.database().ref().child("Users");
             var userObject = $firebaseObject(users);
-            $scope.authObj = $firebaseAuth();
-            var firebaseUser = $scope.authObj.$getAuth();
 
             userObject.$loaded().then(function() 
             {
@@ -115,8 +112,47 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
 
   FB.api('/'+$routeParams.userID+'/posts?fields=likes,comments', function(response) 
   {
+      var postLikes = 0;
+      var postComments = 0;
       console.log("fetching feed");
       console.log(response);
-      //$scope.ref.child($routeParams.userID).child("Events").push(response.data);
+      $scope.ref.child($routeParams.userID).child("Posts").push(response.data);
+            var users = firebase.database().ref().child("Users");
+            var userObject = $firebaseObject(users);
+            userObject.$loaded().then(function() 
+            {
+              console.log("I am inside posts");
+                angular.forEach(userObject, function(value, key)
+                {
+                  if(key==id)
+                  {
+                    console.log(value);
+                    $scope.myPhotos = value.Posts;
+                    angular.forEach($scope.myPhotos, function(value, key)
+                    {
+                      if(key==Object.keys($scope.myPhotos)[0])
+                      {
+                        console.log(value);
+                        for(var i=0; i<value.length;i++)
+                        {
+                            postLikes += value[i].likes.data.length;
+                            try
+                            {
+                              console.log("adding to comments");
+                              postComments += value[i].comments.data.length;
+                              console.log("adding to comments: "+value[i].comments.data.length);
+                            }
+                            catch(error)
+                            {
+
+                            }
+                        }
+                        console.log(postLikes);
+                        console.log(postComments);
+                      }
+                    });
+                  }
+                });
+            });
   });
 });
