@@ -14,24 +14,16 @@ app.config(function($routeProvider)
   })
 });
 
-var dateConverter = function timeConverter(UNIX_timestamp)
-{
-    var a = new Date(UNIX_timestamp);
-    var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-    var year = Math.round(a.getFullYear());
-    var month = months[a.getMonth()];
-    var date = a.getDate();
-    var hour = a.getHours();
-    var min = a.getMinutes();
-    var sec = a.getSeconds();
-    var amm = " AM";
-    if(hour>=12)
+    var formatDate = function(d)
     {
-      amm = " PM";
+      date = new Date(d)
+      var dd = date.getDate(); 
+      var mm = date.getMonth()+1;
+      var yyyy = date.getFullYear(); 
+      if(dd<10){dd='0'+dd} 
+      if(mm<10){mm='0'+mm};
+      return d = dd+'/'+mm+'/'+yyyy
     }
-    var time = date + ' ' + month + ' ' + year + ' ' + hour + ':' + min+amm;
-    return time;
-}  
 
 app.controller("MainCtrl", function($scope, $firebaseArray) 
 {
@@ -55,6 +47,7 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
 
   FB.api('/'+$routeParams.userID+'/albums?fields=id,count,cover_photo,created_time,description,event,from,link,location,name,place,privacy,type,updated_time', function(response) 
   {
+    $scope.days = [];
       $scope.picLikes = 0;
       $scope.commentTotal = 0;
        $scope.albumID = response.data[1].id;
@@ -80,9 +73,10 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
                     {
                       if(key==Object.keys($scope.myPhotos)[0])
                       {
-                        console.log(value);
+                        console.log(value[i].created_time);
                         for(var i=0; i<value.length;i++)
                         {
+                            $scope.days.push(formatDate(value[i].created_time));
                             try
                             {
                               $scope.picLikes += value[i].likes.data.length;
@@ -138,6 +132,7 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
                         console.log(value);
                         for(var i=0; i<value.length;i++)
                         {
+                            $scope.days.push(formatDate(value[i].created_time));
                             try
                             {
                               $scope.postLikes += value[i].likes.data.length;
