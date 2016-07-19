@@ -44,7 +44,7 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
   console.log($routeParams.userID);
   $scope.userName = $routeParams.userName;
   $scope.home = $routeParams.userHometown;
-  FB.api('/me?fields=id,name,cover,hometown,about,bio,gender,languages,link,locale,location,updated_time,timezone,work', function(response) 
+  FB.api('/me?fields=id,name,cover,hometown,about,bio,gender,picture,languages,link,locale,location,updated_time,timezone,work', function(response) 
   {
     console.log(response);
   });
@@ -58,11 +58,11 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
        {
          $scope.pictures = response.data;
        });
-       FB.api('/'+$scope.profAlbum+'/photos?fields=id,count,cover_photo,created_time,description,event,from,link,location,name,place,privacy,type,updated_time', function(response) 
-       {
-         // $scope.profPic = response.data.source;
-          console.log(response.data);
-       });
+       // FB.api('/'+$scope.profAlbum+'/photos?fields=id,count,cover_photo,created_time,description,event,from,link,location,name,place,privacy,type,updated_time', function(response) 
+       // {
+       //   // $scope.profPic = response.data.source;
+       //    console.log(response.data);
+       // });
   });
 
   FB.api('/'+$routeParams.userID+'/events?fields=id,attending_count,cover,category,description,declined_count,end_time,interested_count,maybe_count,name,place,start_time,timezone,type,updated_time', function(response) 
