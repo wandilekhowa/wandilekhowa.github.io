@@ -43,7 +43,7 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
   console.log($routeParams.userID);
 
   //var searchString        = encodeURI(#capetowns);
-  var searchURL           = "https://search.twitter.com/search.json?q=%40capetown";
+  var searchURL           = "https://api.twitter.com/1.1/search/tweets.json?q=%40capetown";
   $http.jsonp(searchURL).success(function(data)
   {
     console.log(data);
