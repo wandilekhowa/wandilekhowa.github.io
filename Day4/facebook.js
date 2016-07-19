@@ -60,9 +60,10 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
           {
             // console.log(response);
             $scope.pictures.push(response.data);
+            console.log($scope.pictures.length);
           });
        }
-       while(response.paging.next);
+       while(response.paging.next );
        console.log("Done");
        console.log($scope.pictures.length);
   });
