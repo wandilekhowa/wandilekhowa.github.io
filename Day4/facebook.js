@@ -51,23 +51,12 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
 
   FB.api('/'+$routeParams.userID+'/albums?fields=id,count,cover_photo,created_time,description,event,from,link,location,name,place,privacy,type,updated_time', function(response) 
   {
-       //$scope.next = "sasas";
-       //console.log("Fetching pictures");
-       //$scope.albumID = response.data[1].id;
-       //console.log(response.data[1].id);
-       // do
-       // {
-       //    FB.api('/'+$scope.albumID+'/photos?fields=id,count,cover_photo,created_time,description,event,from,link,location,name,place,privacy,type,updated_time', function(response) 
-       //    {
-       //      console.log(response);
-       //      $scope.pictures.push(response.data);
-       //      $scope.next = response.paging.next;
-       //      console.log($scope.pictures.length);
-       //    });
-       // }
-       // while($scope.next);
-       // console.log("Done");
-       // console.log($scope.pictures.length);
+       $scope.albumID = response.data[1].id;
+       console.log(response.data[1].id);
+       FB.api('/'+$scope.albumID+'/photos?fields=id,count,cover_photo,created_time,description,event,from,link,location,name,place,privacy,type,updated_time', function(response) 
+       {
+         console.log(response);
+       });
   });
 
   FB.api('/'+$routeParams.userID+'/events?fields=id,attending_count,cover,category,description,declined_count,end_time,interested_count,maybe_count,name,place,start_time,timezone,type,updated_time', function(response) 
