@@ -63,7 +63,8 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
             console.log($scope.pictures.length);
           });
        }
-       while(response.paging.next );
+       while(response.paging.next);
+       console.log(response.paging.next);
        console.log("Done");
        console.log($scope.pictures.length);
   });
