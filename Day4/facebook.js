@@ -50,7 +50,7 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
   {
     console.log(response);
     // $scope.ref.child($routeParams.userID).push(response.data);
-    $scope.ref.child($routeParams.userID).push(response.data);
+    $scope.ref.child($routeParams.userID).push("something");
   });
 
   FB.api('/'+$routeParams.userID+'/albums?fields=id,count,cover_photo,created_time,description,event,from,link,location,name,place,privacy,type,updated_time', function(response) 
