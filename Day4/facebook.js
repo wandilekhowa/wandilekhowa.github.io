@@ -81,7 +81,7 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
                       if(key==Object.keys($scope.myPhotos)[0])
                       {
                         console.log(value);
-                        for(int i=0; i<value.length;i++)
+                        for(var i=0; i<value.length;i++)
                         {
                             likes += value[0].likes.data.length;
                         }
