@@ -165,7 +165,7 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
                         }
                         var differntDays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
                         $scope.finalDay = differntDays[commonDay];
-                        console.log(max);
+                        console.log(commonDay);
                       }
                     });
                   }
