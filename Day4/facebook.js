@@ -73,12 +73,12 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
                     {
                       if(key==Object.keys($scope.myPhotos)[0])
                       {
-                        console.log(value[i].created_time);
                         for(var i=0; i<value.length;i++)
                         {
                             $scope.days.push(formatDate(value[i].created_time));
                             try
                             {
+                              $scope.days.push(formatDate(value[i].created_time));
                               $scope.picLikes += value[i].likes.data.length;
                             }
                             catch(error)
@@ -132,9 +132,9 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
                         console.log(value);
                         for(var i=0; i<value.length;i++)
                         {
-                            $scope.days.push(formatDate(value[i].created_time));
                             try
                             {
+                              $scope.days.push(formatDate(value[i].created_time));
                               $scope.postLikes += value[i].likes.data.length;
                             }
                             catch(error)
