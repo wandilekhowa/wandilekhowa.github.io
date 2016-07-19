@@ -108,6 +108,10 @@ body {
 	z-index: 9;
 }
 
+.stats{
+	padding-top: 50px;
+}
+
 .inv .active-menu {
 	background-color: #e4e6e5;
 }
