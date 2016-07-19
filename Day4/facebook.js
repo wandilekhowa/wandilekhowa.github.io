@@ -58,64 +58,11 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
        {
          $scope.pictures = response.data;
          console.log($scope.pictures);
-         FB.api(response.paging.next, function(response) 
-         {
-           $scope.pictures_2 = response.data;
-          console.log($scope.pictures_2);
-        });
        });
-       // FB.api('/'+$scope.profAlbum+'/photos?fields=id,count,cover_photo,created_time,description,event,from,link,location,name,place,privacy,type,updated_time', function(response) 
-       // {
-       //   // $scope.profPic = response.data.source;
-       //    console.log(response.data);
-       // });
   });
 
   FB.api('/'+$routeParams.userID+'/events?fields=id,attending_count,cover,category,description,declined_count,end_time,interested_count,maybe_count,name,place,start_time,timezone,type,updated_time', function(response) 
   {
        console.log(response);
   });
-  // if($routeParams.userObj.bio instanceof String)
-  // {  
-  //   console.log("It's a string");
-  //   $scope.bio = $routeParams.userObj.bio;
-  // }
-  // else
-  // {
-  //   $scope.bio = "";
-  // }
-//   FB.api('/'+$routeParams.userID+'?metadata=1', function(response) 
-//   {
-//       console.log(response);
-//   });
-
-//   FB.api('/'+$routeParams.userID+'/accounts?fields=data,paging,summary,total_count', function(response) 
-//   {
-//       console.log(response);
-//   });
-
-//   FB.api('/'+$routeParams.userID+'/admined_groups?', function(response) 
-//   {
-//       console.log(response);
-//   });
-
-//   FB.api('/'+$routeParams.userID+'/albums?fields=id,count,cover_photo,created_time,description,event,from,link,location,name,place,privacy,type,updated_time', function(response) 
-//   {
-//       // $scope.albumID = response.data[1].id;
-//       // console.log(response.data[1].id);
-//       // FB.api('/'+$scope.albumID+'/photos?fields=id,count,cover_photo,created_time,description,event,from,link,location,name,place,privacy,type,updated_time', function(response) 
-//       // {
-//       //   console.log(response);
-//       // });
-//   });
-
-//   FB.api('/'+$routeParams.userID+'/events?', function(response) 
-//   {
-//       console.log(response);
-//   });
-
-//   FB.api('/'+$routeParams.userID+'/books?metadata=1', function(response) 
-//   {
-//       console.log(response);
-//   });
 });
