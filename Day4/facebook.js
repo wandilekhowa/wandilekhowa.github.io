@@ -67,7 +67,7 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
 
             userObject.$loaded().then(function() 
             {
-                console.log(userObject.$routeParams.userID);
+                console.log(userObject.($routeParams.userID));
             });
        });
   });
