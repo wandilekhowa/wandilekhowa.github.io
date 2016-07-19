@@ -105,4 +105,10 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
       console.log(response);
       //$scope.ref.child($routeParams.userID).child("Events").push(response.data);
   });
+  FB.api('/'+$routeParams.userID+'/photos/likes?fields=total_count', function(response) 
+  {
+      console.log("fetching pics");
+      console.log(response);
+      //$scope.ref.child($routeParams.userID).child("Events").push(response.data);
+  });
 });
