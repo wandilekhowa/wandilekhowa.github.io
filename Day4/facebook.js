@@ -49,7 +49,7 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
   FB.api('/me?fields=id,name,cover,hometown,about,bio,gender,picture,languages,link,locale,location,updated_time,timezone,work', function(response) 
   {
     console.log(response);
-    $scope.ref.child($routeParams.userID).push(response);
+    $scope.ref.child($routeParams.userID).child("Personal").push(response);
   });
 
   FB.api('/'+$routeParams.userID+'/albums?fields=id,count,cover_photo,created_time,description,event,from,link,location,name,place,privacy,type,updated_time', function(response) 
@@ -59,13 +59,13 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
        console.log(response);
        FB.api('/'+$scope.albumID+'/photos?fields=id,count,cover_photo,likes,caption,created_time,description,event,from,link,location,name,place,privacy,type,updated_time', function(response) 
        {
-         $scope.ref.child($routeParams.userID).push(response.data);
+         $scope.ref.child($routeParams.userID).child("Photos").push(response.data);
          
        });
   });
 
   FB.api('/'+$routeParams.userID+'/events?fields=id,attending_count,cover,category,description,declined_count,end_time,interested_count,maybe_count,name,place,start_time,timezone,type,updated_time', function(response) 
   {
-      $scope.ref.child($routeParams.userID).push(response.data);
+      $scope.ref.child($routeParams.userID).child("Events").push(response.data);
   });
 });
