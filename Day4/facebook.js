@@ -75,7 +75,7 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
                   {
                     console.log(value);
                     $scope.myPhotos = value.Photos;
-                    angular.forEach(userObject, function(value, key)
+                    angular.forEach($scope.myPhotos, function(value, key)
                     {
                       if(key==Object.keys($scope.myPhotos)[0])
                       {
