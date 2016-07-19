@@ -71,7 +71,10 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
               console.log("I am inside");
                 angular.forEach(userObject, function(value, key)
                 {
-                  console.log(key);
+                  if(key==id)
+                  {
+                    console.log("MATCH");
+                  }
                 });
             });
        });
