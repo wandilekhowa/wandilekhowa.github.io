@@ -55,6 +55,7 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
 
   FB.api('/'+$routeParams.userID+'/albums?fields=id,count,cover_photo,created_time,description,event,from,link,location,name,place,privacy,type,updated_time', function(response) 
   {
+      var likes = 0;
        $scope.albumID = response.data[1].id;
        $scope.profAlbum = response.data[2].id;
        console.log(response);
@@ -80,6 +81,11 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
                       if(key==Object.keys($scope.myPhotos)[0])
                       {
                         console.log(value);
+                        for(int i=0; i<value.length;i++)
+                        {
+                            likes += value[0].likes.data.length;
+                        }
+                        console.log(likes);
                       }
                     });
                   }
