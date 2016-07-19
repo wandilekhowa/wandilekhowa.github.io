@@ -105,7 +105,7 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
       console.log(response);
       //$scope.ref.child($routeParams.userID).child("Events").push(response.data);
   });
-  FB.api('/'+$routeParams.userID+'/photos/uploaded?fields=likes', function(response) 
+  FB.api('/'+$routeParams.userID+'/photos/uploaded?fields=likes,comments', function(response) 
   {
       console.log("fetching pics");
       console.log(response);
