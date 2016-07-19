@@ -40,14 +40,14 @@ app.controller("MainCtrl", function($scope, $firebaseArray)
 
 app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArray) 
 {
-  $scope.ref = firebase.database().ref().child("Users");
+  $scope.ref = firebase.database().ref().child("users");
   $scope.pictures = [];
   console.log($routeParams.userID);
   $scope.userName = $routeParams.userName;
   $scope.home = $routeParams.userHometown;
   FB.api('/me?fields=id,name,cover,hometown,about,bio,gender,picture,languages,link,locale,location,updated_time,timezone,work', function(response) 
   {
-    $scope.Users = $firebaseArray(ref.child($routeParams.userID));
+    $scope.users = $firebaseArray($scope.ref.child($routeParams.userID));
     $scope.ref.child($scope.userId).push(response.data);
   });
 
