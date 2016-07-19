@@ -96,17 +96,14 @@
 
   // Here we run a very simple test of the Graph API after login is
   // successful.  See statusChangeCallback() for when this call is made.
-  function testAPI($scope) {
+  function testAPI($scope) 
+  {
     console.log('Welcome!  Fetching your information.... ');
-    FB.api('/me/feed?', function(response) 
+    FB.api('/me?fields=id,name,cover,hometown,about,bio,gender,languages,link,locale,location,updated_time,timezone,work', function(response) 
   	{
   		console.log(response);
+  		window.location.href = "/#/user/"+response.id+"/"+response.name+"/"+response.hometown.name;
   	});
-    FB.api('/me?fields=id,name,cover,hometown,about,bio,gender,languages,link,locale,location,updated_time,timezone,work', function(response) 
-    {
-    	console.log(response);
-    	window.location.href = "/#/user/"+response.id;
-    });
   }
 
       </script>

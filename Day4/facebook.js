@@ -8,7 +8,7 @@ app.config(function($routeProvider)
   templateUrl: 'Day4/home.html',
   })
 
-  $routeProvider.when('/user/:userID/', {
+  $routeProvider.when('/user/:userID//userName/userHometown', {
   controller: 'ProfileCtrl',
   templateUrl: 'Day4/profile.html',
   })
@@ -41,30 +41,8 @@ app.controller("MainCtrl", function($scope, $firebaseArray)
 app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArray) 
 {
   console.log($routeParams.userID);
-
-  //var searchString        = encodeURI(#capetowns);
-  var searchURL           = "https://api.twitter.com/1.1/search/tweets.json?q=%40capetown";
-  $http.jsonp(searchURL).success(function(data)
-  {
-    console.log(data);
-  })
-  // var Twitter = require('twitter-js-client').Twitter;
-
-  //   //Get this data from your twitter apps dashboard
-  //   var config = {
-  //       "consumerKey": "b21Mq7VV3sOKnvupl87ZatVei",
-  //       "consumerSecret": "aWU5msqZ47zmivi5MF5rrdhdzfEvZqIEx0d7yIjYtNw2vsadLN",
-  //       "accessToken": "3039716836-PrmDqeMfsMhW4ZMiRG0k8fHmbaC6coEMk7SKKEW",
-  //       "accessTokenSecret": "9xUppaTn6gihmXQdFa7QP0FY1BYoa0zeCkVUE0RJs7yiV",
-  //       "callBackUrl": "https://wandilekhowa.github.io/#/"
-  //   }
-
-  //   var twitter = new Twitter(config);
-  //   twitter.getSearch({'q':'#capetown','count': 100}, error, success);
-
-
-  // $scope.userName = $routeParams.userObj.name;
-  // $scope.home = $routeParams.userObj.location.name;
+  $scope.userName = $routeParams.userName;
+  $scope.home = $routeParams.userHometown;
   // if($routeParams.userObj.bio instanceof String)
   // {  
   //   console.log("It's a string");
