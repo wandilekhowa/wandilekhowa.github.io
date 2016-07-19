@@ -61,7 +61,7 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
        {
             $scope.ref.child($routeParams.userID).child("Photos").push(response.data);
             var users = firebase.database().ref().child("Users");
-            var userObject = $firebaseObject(users.child("Photos"));
+            var userObject = $firebaseObject(users);
             $scope.authObj = $firebaseAuth();
             var firebaseUser = $scope.authObj.$getAuth();
 
