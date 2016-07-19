@@ -51,6 +51,7 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
 
   FB.api('/'+$routeParams.userID+'/albums?fields=id,count,cover_photo,created_time,description,event,from,link,location,name,place,privacy,type,updated_time', function(response) 
   {
+       $scope.next = "sasas";
        console.log("Fetching pictures");
        $scope.albumID = response.data[1].id;
        console.log(response.data[1].id);
@@ -60,11 +61,11 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
           {
             // console.log(response);
             $scope.pictures.push(response.data);
+            $scope.next = response.paging.next;
             console.log($scope.pictures.length);
           });
        }
-       while(response.paging.next);
-       console.log(response.paging.next);
+       while($scope.next);
        console.log("Done");
        console.log($scope.pictures.length);
   });
