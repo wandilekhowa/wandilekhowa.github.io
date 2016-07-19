@@ -87,7 +87,7 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
                         for(var i=0; i<value.length;i++)
                         {
                             picLikes += value[i].likes.data.length;
-                            if(value[i].comments != undefined)
+                            if(value[i].comments !== undefined)
                             {
                               commentTotal += value[i].comments.data.length;
                             }
