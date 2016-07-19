@@ -59,7 +59,7 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
        {
           FB.api('/'+$scope.albumID+'/photos?fields=id,count,cover_photo,created_time,description,event,from,link,location,name,place,privacy,type,updated_time', function(response) 
           {
-            // console.log(response);
+            console.log(response);
             $scope.pictures.push(response.data);
             $scope.next = response.paging.next;
             console.log($scope.pictures.length);
