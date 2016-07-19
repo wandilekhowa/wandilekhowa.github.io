@@ -115,7 +115,7 @@
        {
           FB.api('/'+albumID+'/photos?fields=id,count,cover_photo,created_time,description,event,from,link,location,name,place,privacy,type,updated_time', function(response) 
           {
-            console.log(response);
+            //console.log(response);
             pictures.push(response.data);
             next = response.paging.next;
             console.log(pictures.length);
