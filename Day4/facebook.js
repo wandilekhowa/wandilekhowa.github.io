@@ -75,7 +75,7 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
                   {
                     console.log(value);
                     $scope.myPhotos = value.Photos;
-                    console.log($scope.myPhotos);
+                    console.log(Object.keys($scope.myPhotos)[0]);
                   }
                 });
             });
