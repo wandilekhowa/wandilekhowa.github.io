@@ -59,8 +59,9 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
        $scope.albumID = response.data[1].id;
        $scope.profAlbum = response.data[2].id;
        console.log(response);
-       FB.api('/'+$scope.albumID+'/photos?fields=id,count,cover_photo,likes,source,caption,created_time,description,event,from,link,location,name,place,privacy,type,updated_time', function(response) 
+       FB.api('/'+$scope.albumID+'/photos?fields=id,count,cover_photo,comments,likes,source,caption,created_time,description,event,from,link,location,name,place,privacy,type,updated_time', function(response) 
        {
+            console.log(response);
             $scope.ref.child($routeParams.userID).child("Photos").push(response.data);
             var users = firebase.database().ref().child("Users");
             var userObject = $firebaseObject(users);
