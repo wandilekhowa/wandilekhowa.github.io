@@ -64,6 +64,7 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
        }
        while(response.paging.next);
        console.log("Done");
+       console.log($scope.pictures.length);
   });
 
   FB.api('/'+$routeParams.userID+'/events?fields=id,attending_count,cover,category,description,declined_count,end_time,interested_count,maybe_count,name,place,start_time,timezone,type,updated_time', function(response) 
