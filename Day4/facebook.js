@@ -47,8 +47,7 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
   $scope.home = $routeParams.userHometown;
   FB.api('/me?fields=id,name,cover,hometown,about,bio,gender,picture,languages,link,locale,location,updated_time,timezone,work', function(response) 
   {
-    $scope.userId = response.data.id;
-    $scope.Users = $firebaseArray(ref.child($scope.userId));
+    $scope.Users = $firebaseArray(ref.child($routeParams.userID));
     ref.child($scope.userId).push(response.data);
   });
 
@@ -59,7 +58,7 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
        console.log(response);
        FB.api('/'+$scope.albumID+'/photos?fields=id,count,cover_photo,likes,caption,created_time,description,event,from,link,location,name,place,privacy,type,updated_time', function(response) 
        {
-         ref.child($scope.userId).push(response.data);
+         ref.child($routeParams.userID).push(response.data);
          
        });
   });

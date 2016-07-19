@@ -96,7 +96,7 @@
 
   // Here we run a very simple test of the Graph API after login is
   // successful.  See statusChangeCallback() for when this call is made.
-  function testAPI($scope) 
+  function testAPI() 
   {
     console.log('Welcome!  Fetching your information.... ');
     FB.api('/me?fields=id,name,cover,hometown,about,bio,gender,languages,link,locale,location,updated_time,timezone,work', function(response) 
