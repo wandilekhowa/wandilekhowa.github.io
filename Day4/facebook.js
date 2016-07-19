@@ -42,19 +42,30 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
 {
   console.log($routeParams.userID);
 
-  var Twitter = require('twitter-js-client').Twitter;
+  // var Twitter = require('twitter-js-client').Twitter;
 
-    //Get this data from your twitter apps dashboard
-    var config = {
-        "consumerKey": "b21Mq7VV3sOKnvupl87ZatVei",
-        "consumerSecret": "aWU5msqZ47zmivi5MF5rrdhdzfEvZqIEx0d7yIjYtNw2vsadLN",
-        "accessToken": "3039716836-PrmDqeMfsMhW4ZMiRG0k8fHmbaC6coEMk7SKKEW",
-        "accessTokenSecret": "9xUppaTn6gihmXQdFa7QP0FY1BYoa0zeCkVUE0RJs7yiV",
-        "callBackUrl": "https://wandilekhowa.github.io/#/"
-    }
+  //   //Get this data from your twitter apps dashboard
+  //   var config = {
+  //       "consumerKey": "b21Mq7VV3sOKnvupl87ZatVei",
+  //       "consumerSecret": "aWU5msqZ47zmivi5MF5rrdhdzfEvZqIEx0d7yIjYtNw2vsadLN",
+  //       "accessToken": "3039716836-PrmDqeMfsMhW4ZMiRG0k8fHmbaC6coEMk7SKKEW",
+  //       "accessTokenSecret": "9xUppaTn6gihmXQdFa7QP0FY1BYoa0zeCkVUE0RJs7yiV",
+  //       "callBackUrl": "https://wandilekhowa.github.io/#/"
+  //   }
 
-    var twitter = new Twitter(config);
-    twitter.getSearch({'q':'#capetown','count': 100}, error, success);
+  //   var twitter = new Twitter(config);
+  //   twitter.getSearch({'q':'#capetown','count': 100}, error, success);
+
+    var consumerKey = encodeURIComponent('b21Mq7VV3sOKnvupl87ZatVei')
+    var consumerSecret = encodeURIComponent('aWU5msqZ47zmivi5MF5rrdhdzfEvZqIEx0d7yIjYtNw2vsadLN');
+    var credentials = Base64.encode(consumerKey + ':' + consumerSecret);
+
+// Twitters OAuth service endpoint
+var twitterOauthEndpoint = $http.get(
+  'https://api.twitter.com/oauth2/token'
+  , "grant_type=client_credentials"
+  , {headers: {'Authorization': 'Basic ' + credentials, 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'}}
+);
 
   // $scope.userName = $routeParams.userObj.name;
   // $scope.home = $routeParams.userObj.location.name;
