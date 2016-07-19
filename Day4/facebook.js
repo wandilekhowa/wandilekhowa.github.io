@@ -55,7 +55,9 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
 
   FB.api('/'+$routeParams.userID+'/albums?fields=id,count,cover_photo,created_time,description,event,from,link,location,name,place,privacy,type,updated_time', function(response) 
   {
-      var likes = 0;
+      var picLikes = 0;
+      var postLikes = 0;
+      var commentTotal = 0;
        $scope.albumID = response.data[1].id;
        $scope.profAlbum = response.data[2].id;
        console.log(response);
@@ -84,9 +86,11 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
                         console.log(value);
                         for(var i=0; i<value.length;i++)
                         {
-                            likes += value[0].likes.data.length;
+                            picLikes += value[0].likes.data.length;
+                            commentTotal += value[0].comments.data.length;
                         }
-                        console.log(likes);
+                        console.log(picLikes);
+                        console.log(commentTotal);
                       }
                     });
                   }
