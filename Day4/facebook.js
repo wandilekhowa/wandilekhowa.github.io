@@ -41,6 +41,20 @@ app.controller("MainCtrl", function($scope, $firebaseArray)
 app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArray) 
 {
   console.log($routeParams.userID);
+
+  $http({
+    url: "https://api.twitter.com/1.1/search/tweets.json",
+    method: "GET",
+    params: {
+        /* text:"good news everyday", */
+      access_token:"3039716836-PrmDqeMfsMhW4ZMiRG0k8fHmbaC6coEMk7SKKEW",
+    }
+  }).then(function(response) 
+  {
+    //console.log(response);
+    $scope.brus = response.data;
+  })
+
   // $scope.userName = $routeParams.userObj.name;
   // $scope.home = $routeParams.userObj.location.name;
   // if($routeParams.userObj.bio instanceof String)
