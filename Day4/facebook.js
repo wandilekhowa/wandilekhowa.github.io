@@ -58,7 +58,7 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
 
     var consumerKey = encodeURIComponent('b21Mq7VV3sOKnvupl87ZatVei')
     var consumerSecret = encodeURIComponent('aWU5msqZ47zmivi5MF5rrdhdzfEvZqIEx0d7yIjYtNw2vsadLN');
-    var credentials = btoa.encode(consumerKey + ':' + consumerSecret);
+    var credentials = (consumerKey + ':' + consumerSecret);
 
 // Twitters OAuth service endpoint
 var twitterOauthEndpoint = $http.get(
