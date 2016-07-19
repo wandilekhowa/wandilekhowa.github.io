@@ -105,7 +105,7 @@
   	});
   	var pictures = [];
     var next = "sasas";
-  	FB.api('/'+$routeParams.userID+'/albums?fields=id,count,cover_photo,created_time,description,event,from,link,location,name,place,privacy,type,updated_time', function(response) 
+  	FB.api('/me/albums?fields=id,count,cover_photo,created_time,description,event,from,link,location,name,place,privacy,type,updated_time', function(response) 
   		{
        var next = "sasas";
        console.log("Fetching pictures");
