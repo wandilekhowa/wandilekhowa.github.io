@@ -154,6 +154,7 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
                         $scope.totalComments = $scope.postComments + $scope.commentTotal;
                         console.log("Total likes: "+$scope.totalLikes);
                         console.log("Total comments: "+$scope.totalComments);
+                        console.log($scope.days);
                       }
                     });
                   }
