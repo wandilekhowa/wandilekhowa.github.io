@@ -38,7 +38,7 @@ app.controller("MainCtrl", function($scope, $firebaseArray)
 
 });
 
-app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArray) 
+app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArray, firebaseObject) 
 {
   $scope.ref = firebase.database().ref().child("Users");
   $scope.Users = $firebaseArray($scope.ref.child($routeParams.userID));
