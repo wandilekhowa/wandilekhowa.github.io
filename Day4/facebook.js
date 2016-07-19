@@ -83,12 +83,17 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
                         console.log(value);
                         for(var i=0; i<value.length;i++)
                         {
-                            picLikes += value[i].likes.data.length;
                             try
                             {
-                              console.log("adding to comments");
+                              picLikes += value[i].likes.data.length;
+                            }
+                            catch(error)
+                            {
+
+                            }
+                            try
+                            {
                               commentTotal += value[i].comments.data.length;
-                              console.log("adding to comments: "+value[i].comments.data.length);
                             }
                             catch(error)
                             {
@@ -135,12 +140,17 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
                         console.log(value);
                         for(var i=0; i<value.length;i++)
                         {
-                            postLikes += value[i].likes.data.length;
                             try
                             {
-                              console.log("adding to comments");
+                              postLikes += value[i].likes.data.length;
+                            }
+                            catch(error)
+                            {
+
+                            }
+                            try
+                            {
                               postComments += value[i].comments.data.length;
-                              console.log("adding to comments: "+value[i].comments.data.length);
                             }
                             catch(error)
                             {
