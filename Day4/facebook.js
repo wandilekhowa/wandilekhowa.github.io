@@ -127,10 +127,10 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
                   if(key==id)
                   {
                     console.log(value);
-                    $scope.myPhotos = value.Posts;
-                    angular.forEach($scope.myPhotos, function(value, key)
+                    $scope.myPosts = value.Posts;
+                    angular.forEach($scope.myPosts, function(value, key)
                     {
-                      if(key==Object.keys($scope.myPhotos)[0])
+                      if(key==Object.keys($scope.myPosts)[0])
                       {
                         console.log(value);
                         for(var i=0; i<value.length;i++)
