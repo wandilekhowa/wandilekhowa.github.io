@@ -87,10 +87,13 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
                         for(var i=0; i<value.length;i++)
                         {
                             picLikes += value[i].likes.data.length;
-                            if(!(typeof value[i].comments == "undefined"))
+                            try
                             {
-                              console.log("adding comment");
                               commentTotal += value[i].comments.data.length;
+                            }
+                            catch(error)
+                            {
+                              
                             }
                         }
                         console.log(picLikes);
