@@ -91,6 +91,7 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
                             {
                               console.log("adding to comments");
                               commentTotal += value[i].comments.data.length;
+                              console.log("adding to comments: "+value[i].comments.data.length);
                             }
                             catch(error)
                             {
