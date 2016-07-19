@@ -68,7 +68,11 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
 
             userObject.$loaded().then(function() 
             {
-                console.log(userObject);
+              console.log("I am inside");
+                angular.forEach(userObject, function(value, key)
+                {
+                  console.log(key);
+                });
             });
        });
   });
