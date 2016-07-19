@@ -8,7 +8,7 @@ app.config(function($routeProvider)
   templateUrl: 'Day4/home.html',
   })
 
-  $routeProvider.when('/user/:userID//userName/userHometown', {
+  $routeProvider.when('/user/:userID/:userName/:userHometown', {
   controller: 'ProfileCtrl',
   templateUrl: 'Day4/profile.html',
   })
