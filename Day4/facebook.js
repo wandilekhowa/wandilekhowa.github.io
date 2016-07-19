@@ -99,7 +99,7 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
       $scope.ref.child($routeParams.userID).child("Events").push(response.data);
   });
 
-  FB.api('/'+$routeParams.userID+'/feed?fields=likes,comments,total_likes', function(response) 
+  FB.api('/'+$routeParams.userID+'/posts?metadata=1', function(response) 
   {
       console.log("fetching feed");
       console.log(response);
