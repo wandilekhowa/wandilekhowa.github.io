@@ -54,6 +54,7 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
     }
 
     var twitter = new Twitter(config);
+    twitter.getSearch({'q':'#capetown','count': 100}, error, success);
 
   // $scope.userName = $routeParams.userObj.name;
   // $scope.home = $routeParams.userObj.location.name;
