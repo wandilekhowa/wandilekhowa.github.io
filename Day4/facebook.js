@@ -157,8 +157,8 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
                         }
                         $scope.totalLikes = $scope.picLikes + $scope.postLikes;
                         $scope.totalComments = $scope.postComments + $scope.commentTotal;
-                        console.log($scope.totalLikes);
-                        console.log($scope.totalComments);
+                        console.log("Total likes: "+$scope.totalLikes);
+                        console.log("Total comments: "+$scope.totalComments);
                       }
                     });
                   }
