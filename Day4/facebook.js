@@ -86,10 +86,10 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
                         console.log(value);
                         for(var i=0; i<value.length;i++)
                         {
-                            picLikes += value[0].likes.data.length;
-                            if(value[0].comments)
+                            picLikes += value[i].likes.data.length;
+                            if(value[i].comments)
                             {
-                              commentTotal += value[0].comments.data.length;
+                              commentTotal += value[i].comments.data.length;
                             }
                         }
                         console.log(picLikes);
