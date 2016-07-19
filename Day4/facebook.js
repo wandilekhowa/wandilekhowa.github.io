@@ -62,7 +62,7 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
 
 // Twitters OAuth service endpoint
 var twitterOauthEndpoint = $http.get(
-  'https://api.twitter.com/oauth2/token'
+  'https://api.twitter.com/oauth2/3039716836-PrmDqeMfsMhW4ZMiRG0k8fHmbaC6coEMk7SKKEW'
   , "grant_type=client_credentials"
   , {headers: {'Authorization': 'Basic ' + credentials, 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'}}
 );
