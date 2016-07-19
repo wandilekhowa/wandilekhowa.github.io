@@ -58,6 +58,11 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
        {
          $scope.pictures = response.data;
          console.log($scope.pictures);
+         FB.api(response.paging.next, function(response) 
+         {
+           $scope.pictures_2 = response.data;
+          console.log($scope.pictures_2);
+        });
        });
        // FB.api('/'+$scope.profAlbum+'/photos?fields=id,count,cover_photo,created_time,description,event,from,link,location,name,place,privacy,type,updated_time', function(response) 
        // {
