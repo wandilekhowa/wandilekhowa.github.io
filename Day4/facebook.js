@@ -62,7 +62,7 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
             $scope.ref.child($routeParams.userID).child("Photos").push(response.data);
             $scope.Users.$loaded(function() 
             {
-              console.log($scope.Users.Photos);
+              console.log($scope.Users);
             });
        });
   });
