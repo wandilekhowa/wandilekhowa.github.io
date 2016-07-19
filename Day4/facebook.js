@@ -42,18 +42,18 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
 {
   console.log($routeParams.userID);
 
-  $http({
-    url: "https://api.twitter.com/1.1/search/tweets.json",
-    method: "GET",
-    params: {
-        /* text:"good news everyday", */
-      q: "cape town"
+  var Twitter = require('twitter-js-client').Twitter;
+
+    //Get this data from your twitter apps dashboard
+    var config = {
+        "consumerKey": "b21Mq7VV3sOKnvupl87ZatVei",
+        "consumerSecret": "aWU5msqZ47zmivi5MF5rrdhdzfEvZqIEx0d7yIjYtNw2vsadLN",
+        "accessToken": "3039716836-PrmDqeMfsMhW4ZMiRG0k8fHmbaC6coEMk7SKKEW",
+        "accessTokenSecret": "9xUppaTn6gihmXQdFa7QP0FY1BYoa0zeCkVUE0RJs7yiV",
+        "callBackUrl": "https://wandilekhowa.github.io/#/"
     }
-  }).then(function(response) 
-  {
-    //console.log(response);
-    $scope.brus = response.data;
-  })
+
+    var twitter = new Twitter(config);
 
   // $scope.userName = $routeParams.userObj.name;
   // $scope.home = $routeParams.userObj.location.name;
