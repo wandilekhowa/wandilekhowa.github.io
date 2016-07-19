@@ -67,11 +67,7 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
 
             userObject.$loaded().then(function() 
             {
-              angular.forEach(userObject, function(value, key)
-              {
-                console.log("something");
-                 console.log(value);
-              });
+                console.log(userObject.Photos);
             });
        });
   });
