@@ -38,7 +38,7 @@ app.controller("MainCtrl", function($scope, $firebaseArray)
 
 });
 
-app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArray) 
+app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArray, $firebaseObject, $firebaseAuth) 
 {
   $scope.ref = firebase.database().ref().child("Users");
   $scope.Users = $firebaseArray($scope.ref.child($routeParams.userID));
@@ -61,7 +61,7 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
        {
             $scope.ref.child($routeParams.userID).child("Photos").push(response.data);
             var users = firebase.database().ref().child("Users");
-            var userObject = $firebaseArray(users.child("Photos"));
+            var userObject = $firebaseObject(users.child("Photos"));
             $scope.authObj = $firebaseAuth();
             var firebaseUser = $scope.authObj.$getAuth();
 
