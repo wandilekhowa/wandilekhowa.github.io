@@ -179,7 +179,7 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
                         var commonDay = $scope.days.most();
                         var differntDays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
                         $scope.finalDay = differntDays[commonDay[0][0]];
-                        console.log(commonDay);
+                        console.log($scope.finalDay);
                       }
                     });
                   }
