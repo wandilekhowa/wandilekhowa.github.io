@@ -21,11 +21,28 @@ app.config(function($routeProvider)
       return dayOfPost;
     }
 
-    var mode = function(arr){
-    return arr.sort((a,b) =>
-          arr.filter(v => v===a).length
-        - arr.filter(v => v===b).length
-    ).pop();
+Array.prototype.most= function(num){
+  if(Number(num) !== NaN)
+  {
+    var L= this.length, freq= [], unique= [], 
+    tem, max= 1, index, count;
+    while(L>= max){
+        tem= this[--L];
+        if(unique.indexOf(tem)== -1){
+            unique.push(tem);
+            index= -1, count= 0;
+            while((index= this.indexOf(tem, index+1))!= -1){
+                ++count;
+            }
+            if(count> max){
+                freq= [tem];
+                max= count;
+            }
+            else if(count== max) freq.push(tem);
+        }
+    }
+  }
+  return [freq];
 }
 
 
@@ -159,7 +176,7 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
                         console.log("Total likes: "+$scope.totalLikes);
                         console.log("Total comments: "+$scope.totalComments);
                         console.log($scope.days.length);
-                        var commonDay = mode($scope.days)
+                        var commonDay = $scope.days.most();
                         var differntDays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
                         //$scope.finalDay = differntDays[commonDay];
                         console.log(commonDay);
