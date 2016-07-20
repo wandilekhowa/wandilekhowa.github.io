@@ -153,7 +153,7 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
                         var counts = {}, max = 0, commonDay=0;
                         for (var i in $scope.days) 
                         {
-                          if(i !== 'NaN')
+                          if(i !== NaN)
                           {
                             counts[$scope.days[i]] = (counts[$scope.days[i]] || 0) + 1;
                             if (counts[$scope.days[i]] > max) 
