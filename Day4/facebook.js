@@ -155,6 +155,7 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
                         {
                           if(Number(i) !== NaN)
                           {
+                            console.log(Number(i));
                             counts[$scope.days[i]] = (counts[$scope.days[i]] || 0) + 1;
                             if (counts[$scope.days[i]] > max) 
                             { 
