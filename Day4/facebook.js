@@ -42,7 +42,7 @@ Array.prototype.most= function(num){
         }
     }
   }
-  return [freq];
+  return [freq, max];
 }
 
 
