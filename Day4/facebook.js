@@ -53,6 +53,7 @@ app.controller("MainCtrl", function($scope, $firebaseArray)
 
 app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArray, $firebaseObject, $firebaseAuth) 
 {
+  $scope.count = 0;
   var id = $routeParams.userID;
   $scope.ref = firebase.database().ref().child("Users");
   $scope.Users = $firebaseArray($scope.ref.child($routeParams.userID));
@@ -96,6 +97,7 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
                       {
                         for(var i=0; i<value.length;i++)
                         {
+                          $scope.count += 1;
                             $scope.days.push(formatDate(value[i].created_time));
                             try
                             {
@@ -153,6 +155,7 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
                         console.log(value);
                         for(var i=0; i<value.length;i++)
                         {
+                          $scope.count += 1;
                             try
                             {
                               $scope.days.push(formatDate(value[i].created_time));
