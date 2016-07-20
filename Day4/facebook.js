@@ -42,7 +42,7 @@ Array.prototype.most= function(num){
         }
     }
   }
-  return [freq, max];
+  return [freq];
 }
 
 
@@ -178,7 +178,7 @@ app.controller("ProfileCtrl", function($scope, $http ,$routeParams, $firebaseArr
                         console.log($scope.days.length);
                         var commonDay = $scope.days.most();
                         var differntDays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
-                        //$scope.finalDay = differntDays[commonDay];
+                        $scope.finalDay = differntDays[commonDay[0][0]];
                         console.log(commonDay);
                       }
                     });
