@@ -117,7 +117,7 @@
         height: 100%;
         border: 10px solid black;
         transition: all .3s;
-        border-radius: 25%;
+        border-radius: 50%;
     }
 
     #navTitle:hover{
