@@ -22,6 +22,9 @@
 	    transition: all .3s;
 	}
 
+	a h1{
+		transition: all .3s;
+	}
 
 	li a:hover{
 		font-size: 20px;
@@ -47,6 +50,8 @@
 		color: white;
 		width: 25%;
 		position: fixed;
+		transition: all .3s;
+		
 	}
 
 	#navTitle:hover{
@@ -91,6 +96,7 @@
 		float: left;
 		height: 200px;
 		margin: 0px;
+		transition: all .3s;
 	}
 
 	.pers-img::before {
@@ -149,6 +155,7 @@
 		background-size: cover;
 	  	background-position: center center;
 	  	position: relative;
+	  	transition: all .3s;
 	}
 
 	.pers-img:hover::before {
