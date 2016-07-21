@@ -243,6 +243,7 @@
         float: left;
         height: 60px;
         margin-left: 28px;
+        transition: all .3s;
         }
         .fake{
             width: 0%;
@@ -258,6 +259,7 @@
         float: left;
         height: 60px;
         margin-left: 42.9px;
+        transition: all .3s;
         }
     }
 
@@ -269,5 +271,6 @@
         float: left;
         height: 60px;
         margin-left: 12px;
+        transition: all .3s;
         }
     }
