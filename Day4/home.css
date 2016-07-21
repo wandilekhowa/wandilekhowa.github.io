@@ -179,23 +179,23 @@
 
 	.pers-img:hover .real-pers {
 	  opacity: 1;
-	  transform: translate(-180%,-20%);
+	  transform: translate(-180%,-10%);
 	  wi
 	}
 
 	.proj-img:hover .real-proj {
 	  opacity: 1;
-	  transform: translate(-180%,-20%);
+	  transform: translate(-180%,-10%);
 	}
 
 	.edu-img:hover .real-edu {
 	  opacity: 1;
-	  transform: translate(-180%,-20%);
+	  transform: translate(-180%,-10%);
 	}
 
 	.prof-img:hover .real-prof {
 	  opacity: 1;
-	  transform: translate(-180%,-20%);
+	  transform: translate(-180%,-10%);
 	}
 
 
