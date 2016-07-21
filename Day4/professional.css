@@ -22,7 +22,9 @@
         font-size: 17px;
         float: right;
         padding: 25px;
-        text-decoration: none;   
+        text-decoration: none; 
+        list-style: none;
+	    transition: all .3s;
     }
 
     nav{
