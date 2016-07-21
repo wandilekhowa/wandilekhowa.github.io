@@ -40,6 +40,7 @@
         color: white;
         width: 25%;
         position: fixed;
+        transition: all .3s;
     }
 
     li a:hover{
@@ -103,6 +104,7 @@
         display: block;
         float: left;
         height: 60px;
+        transition: all .3s;
     }
 
     #icon, a img, .big{
@@ -178,6 +180,7 @@
         float: left;
         height: 60px;
         margin-left: 28px;
+        transition: all .3s;
         }
         .fake{
             width: 0%;
@@ -193,6 +196,7 @@
         float: left;
         height: 60px;
         margin-left: 42.9px;
+        transition: all .3s;
         }
     }
 
@@ -204,9 +208,11 @@
         float: left;
         height: 60px;
         margin-left: 18.5px;
+        transition: all .3s;
         }
 
         #icon, a img, .big{
             margin-left: 10px;
+            transition: all .3s;
         }
     }
