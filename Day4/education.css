@@ -110,6 +110,7 @@
         height: 60px;
         transition: all .3s;
         border-radius: 50%;
+        padding:.7px;
     }
 
     #icon, a img, .big{
