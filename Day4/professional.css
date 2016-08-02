@@ -62,10 +62,10 @@
         background-color: black;
     }
 
-    .wrapper{
-        width: 100%;
-        margin: 0px auto;
-    }
+    /*.wrapper{*/
+    /*    width: 100%;*/
+    /*    margin: 0px auto;*/
+    /*}*/
 
     * {
         box-sizing: border-box;
