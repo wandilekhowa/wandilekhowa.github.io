@@ -219,7 +219,7 @@
         left: 0%;
         top: 0%;
         width: 100%;
-        height: auto;
+        height: 200vh;
         opacity: 0.5;
         z-index:-1;
     }
