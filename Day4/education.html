@@ -5,18 +5,18 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
       <link type="text/css" rel="stylesheet" href="education.css"/>
       <script>
-        var header = $('.intro-text'),minScroll = 1; // min distance to scroll before compacting header
-
-        // Listen to scroll event
-        $(window).scroll(function () {
-          var scrollTop = $(this).scrollTop();
-          if (scrollTop > minScroll) {
-          header.addClass('scrollNav');
-        }
-         else {
-          header.removeClass('scrollNav');
-        }
-    });
+        $(document).ready(function(){       
+            var scroll_pos = 0;
+            $(document).scroll(function() { 
+                scroll_pos = $(this).scrollTop();
+                if(scroll_pos > 1) {
+                    $(".intro-text").css('background-color', 'white');
+                    $("li a").css('color', 'black');
+                } else {
+                    $("li a").css('color', 'white');
+                }
+            });
+        });
       </script>
       <title>Wandile's Personal Website</title>
     </head>
