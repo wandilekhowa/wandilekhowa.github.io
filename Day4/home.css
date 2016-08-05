@@ -229,7 +229,7 @@
 	}
 
 	.intro-text{
-		padding-top: 60px;
+		padding: 10px;
 		width:100%;
 
 	}
@@ -241,7 +241,7 @@
 	}
 
 	.intro-text h1{
-		padding-top: 20px;
+		font-size:30px;
 		color: white;
 		text-align: center;
 	}
