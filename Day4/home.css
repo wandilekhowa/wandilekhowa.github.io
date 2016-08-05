@@ -70,10 +70,7 @@
 	body{
 		margin:0;
 		padding:0;
-		background: linear-gradient(316deg, #ffdf79, #ed747f, #e371d4, #8d5993, #9771e3);
-		-webkit-animation: gradientShift 18s ease infinite;
-  		-moz-animation: gradientShift 18s ease infinite;
-  		animation: gradientShift 18s ease infinite;
+		background: black
 	}
 	.clearfix:after {
 	     visibility: hidden;
