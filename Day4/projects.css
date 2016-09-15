@@ -156,6 +156,7 @@
         left: 0%;
         top: 0%;
         bottom:0%;
+        height:100%;
         width: 100%;
         opacity: 0.5;
         z-index:-1;
